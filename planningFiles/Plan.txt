@@ -1,0 +1,49 @@
+Final Project
+Main points
+MongoDB /Sequelize?
+Express
+Node
+React
+Github - Sam
+Trello - 
+Other NPM packages - jwt, bcrypt, react-modal
+
+Front-end
+React
+Must have login/sign up page
+Logout button redirecting back to the login/sign up page
+Dynamic information displayed about user once logged in
+If logged in correctly also display a response from a free API
+Component that displays all registered users on the app
+Component that allows to update username, password, and email
+Delete account button
+Nicely styled (UX/UI design)
+
+Back-end
+REST API built using Node, Express and have a database layer with routes, middleware and controllers for all CRUD ops
+Login - use password hashing and generate JWT tokens
+Sign-up - use password hashing and generate JWT tokens
+Update info - use password hashing and generate JWT tokens
+List users - use password hashing and generate JWT tokens
+Delete user - generate JWT tokens 
+
+Project Overview Plan 
+Deliver a presentation slide deck in your groups at 1:30 on Tuesday 9th May containing the following information. 
+	•	What is your idea? - Cookie Club featuring users and recipes
+	•	What is the MVP (Minimum Viable Product)?  A website users can register to, log in to, update their info, delete their info, favourite a recipe, see favourite recipes, vote on recipes, access recipe details such as cost of baking, ingredients, time to bake, and a picture.
+	•	What external API will the group be using? Custom build Mongo DB api
+	•	A brief design overview of the app (Can just be sketches doesn't need to be too detailed at this point) - flow charts?
+	•	Each group should nominate a project manager to keep track of Trello 
+	•	How will the group split up the workload?
+	•	How will the group use Git and GitHub Effectively?
+	•	Any other details or technical specs the group wants to add 
+	•	What will be the stretch goals for the group? 
+
+
+
+
+Stretch
+Protect all API routes with JWT tokens
+Hosted on Netlify and Render, or similar
+Persistent login using JWT tokens
+Get all users to be just available for admin

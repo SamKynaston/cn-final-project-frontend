@@ -1,0 +1,29 @@
+Cookie Club Class Names
+
+Homepage
+mainDiv - whole page - flex, column, margin, padding
+carouselDiv - Pictures carousel
+
+Cookies
+cookiesMain - whole page - flex, column, margin, padding
+cookies - list down the page
+
+Users
+mainDiv - whole page - flex, column, margin, padding
+loggedInDiv - main section of dynamic user data
+info - text bodies for user info
+img - user profile picture
+
+Login Section
+loginDiv - main section of login
+loginText - "Login"
+registerText - "Register"
+btn - 
+
+NavBar
+navbarMain - main section of the navbar
+navBtns - navigation buttons
+
+Footer
+footerMain - whole footer div
+footerText - text within footer
