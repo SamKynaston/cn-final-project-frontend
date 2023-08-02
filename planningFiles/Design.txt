@@ -1,0 +1,9 @@
+Text: font-family: 'Montserrat', sans-serif;
+
+Colours:
+Black: #020504
+Pink: #FF66C4
+Green: #5CB8B2
+Grey: #F6F6F6
+Delete button pink: #FD3CB0
+
