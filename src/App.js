@@ -1,6 +1,6 @@
 import './App.css';
 import './components/style.css';
-import Cookies from './components/cookies';
+import { Cookies } from './components/cookies';
 
 function App() {
   return (
