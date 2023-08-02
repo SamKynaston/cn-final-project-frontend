@@ -19,6 +19,10 @@
 .registerContainer{
 
 }
+.tandc{
+    text-decoration: none;
+
+}
 .btn{
     display:flex;
     align-items: center;

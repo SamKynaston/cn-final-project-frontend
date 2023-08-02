@@ -43,18 +43,20 @@ const Register = () => {
           <button className="close" onClick={closeModal}>X</button>
           <h1>Please register:</h1>
             <form onSubmit = {submitHandler}>
-                <label>Username:
+                <label className="label">Username:
                     <input onChange= {(e) => setUsername(e.target.value)} required></input>
                 </label>
             <br></br>
-                <label>Email:
+                <label className="label">Email:
                     <input onChange= {(e) => setEmail(e.target.value)} required></input>
                 </label>
             <br></br>
-                <label>Password:
+                <label className="label"yeh>Password:
                     <input type="password" onChange= {(e) => setPassword(e.target.value)} required></input>
                 </label>
             <br></br>
+                <input type="checkbox" id="tsandcs" name="tsandcs" value="Agree"></input>
+                <label for="tsandcs"> I have read and agree to the <a className="tandc" href="#">terms & conditions</a> of The Cookie Club.</label><br></br>
                 <button type="submit">Click to register</button>
             </form>
           </div>
