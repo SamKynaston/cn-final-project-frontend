@@ -2,7 +2,6 @@ Overall design/ wireframe - Chloe
 Class names - Nathan
  
 API
-Nathan to create
 Chloe to provide information and images/ upload to url image host
  
 Always there components
