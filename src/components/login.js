@@ -1,7 +1,7 @@
 import './style.css';
 import Modal from 'react-modal';
 
-//login or register
+//login
 //successful login brings up dynamic user info
 const Login = () => {
 
