@@ -1,11 +1,16 @@
 /*******NAVBAR CSS*********/
 .navbarMain{
-
+  display: flex;
+}
+.loginorreg{
+  align-content: flex-end;
 }
 .navBtns{
 
 }
-
+.mainContent{
+  display: inline;
+}
 /*******LOGIN/REGISTER CSS*********/
 .loginMain{
 
@@ -54,14 +59,12 @@
 }
 .ReactModal__Overlay{
     position:absolute;
-    margin-left: 100vw;
-    transition: margin-left 3000ms ease-in-out;
   }
   .ReactModal__Overlay--after-open{
-    margin-left: 75vw;
+
   }
   .ReactModal__Overlay--before-close{
-    margin-left: 100vw;
+    
   }
  
   

@@ -1,7 +1,7 @@
 import './style.css';
 import { useState, useEffect } from 'react';
 
-export const Cookies = () => {
+const Cookies = () => {
     const [allCookies, setAllCookies] = useState([]);
     const [errorMessage, setErrorMessage] = useState([]);
 
@@ -13,8 +13,7 @@ export const Cookies = () => {
                     throw new Error(response.statusText)
                 }
                 const data = await response.json()
-                
-                setAllCookies(data);
+                setAllCookies(data.hits);
 
             } catch (err) {
                 console.log(err)
@@ -31,9 +30,10 @@ export const Cookies = () => {
             {errorMessage && <h3>{errorMessage}</h3>}
 
             {allCookies.map((data, index) => {
-                return <p key={index}>NAME: {data.hits[0].recipe.label}</p>
+                return <p key={index}>NAME: {data.recipe.label}</p>
             })}
         </div>
     );
 }
 
+export default Cookies;

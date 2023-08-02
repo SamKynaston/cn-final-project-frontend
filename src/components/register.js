@@ -4,8 +4,7 @@ import { registerUser } from "../utils";
 import { useState } from "react";
 import './style.css';
 
-//register
-//successful register brings up dynamic user info
+//successful register needs to bring up dynamic user info
 
 const Register = () => {
     const [username, setUsername] = useState()
@@ -33,7 +32,6 @@ const Register = () => {
         <div className="registerMain">
             <button className="btn" onClick={openModal}>Sign Up</button>
         <Modal
-          closeTimeoutMS={3000}
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           ariaHideApp={false}
@@ -51,12 +49,14 @@ const Register = () => {
                     <input onChange= {(e) => setEmail(e.target.value)} required></input>
                 </label>
             <br></br>
-                <label className="label"yeh>Password:
+                <label className="label">Password:
                     <input type="password" onChange= {(e) => setPassword(e.target.value)} required></input>
                 </label>
             <br></br>
-                <input type="checkbox" id="tsandcs" name="tsandcs" value="Agree"></input>
-                <label for="tsandcs"> I have read and agree to the <a className="tandc" href="#">terms & conditions</a> of The Cookie Club.</label><br></br>
+                <label className="tsandcs">I have read and agree to the <a className="tandc" href="/">terms & conditions</a> of The Cookie Club.
+                    <input type="checkbox" id="tsandcs" name="tsandcs" value="Agree"></input>
+                </label>
+            <br></br>
                 <button type="submit">Click to register</button>
             </form>
           </div>

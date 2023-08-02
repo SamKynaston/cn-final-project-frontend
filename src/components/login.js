@@ -8,6 +8,7 @@ import './style.css';
 const Login = ({newUser}) => {
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     
     const submitHandler = async (e) => {
         e.preventDefault()
@@ -24,9 +25,8 @@ const Login = ({newUser}) => {
 
     return(
         <div className="loginMain">
-            <button className="btn" onClick={openModal}>Sign Up</button>
+            <button className="btn" onClick={openModal}>Login</button>
         <Modal
-          closeTimeoutMS={3000}
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           ariaHideApp={false}

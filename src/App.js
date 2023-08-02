@@ -1,12 +1,12 @@
 import './App.css';
 import './components/style.css';
-import { Cookies } from './components/cookies';
+import NavBar from './components/navBar';
 
 
 function App() {
   return (
     <div className="App">
-      <Cookies />
+      <NavBar />
     </div>
   );
 }

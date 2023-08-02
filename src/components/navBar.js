@@ -19,22 +19,21 @@ const NavBar = () => {
                 <Link to="/recipes">Recipe's</Link>
             </nav>
             <div className="loginorreg">
-                <Link to="/login">Login</Link>
-                <Link to="/register">Register</Link>
+                <Login />
+                <Register />
             </div>
-            <h1>React Router</h1>
+            <h1>Cookie Club</h1>
     
-        <Routes>
-            <Route path="/" element={ <Home />}>    
-                <Route index element={ <Home />} />
-                <Route path="/account" element={ <Account />} />
-                <Route path="/recipes" element={ <Recipes />} />
-                <Route path="/login" element={ <Login />} />
-                <Route path="/register" element={ <Register />} />
-            </Route>
+        <Routes> 
+            <Route index element={ <Home />} />
+            <Route path="account" element={ <Account />} />
+            <Route path="recipes" element={ <Recipes />} />
         </Routes>
+        
+            <div className="mainContent">
+                <Outlet />
+            </div>
         </div>
-        <Outlet />
         </>
     )
 }
