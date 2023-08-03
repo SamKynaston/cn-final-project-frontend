@@ -25,16 +25,28 @@ const Home = () =>{
             console.log(err)
         }
     }
-    useEffect(() => {
-    fetchData()
-}, []);
+//     useEffect(() => {
+//     fetchData()
+// }, []);
 console.log(allCookies)
+function modalOne(){
+  setAllCookies(fetchData());
+  setTimeout(() => {setModal1IsOpen(true)}, 1000);
+}
+function modalTwo(){
+  fetchData();
+  setTimeout(() => {setModal2IsOpen(true)}, 1000);
+}
+function modalThree(){
+  fetchData();
+  setTimeout(() => {setModal3IsOpen(true)}, 1000);
+}
 
     return (
     <div className="random">
         <h1>You are on the Home page</h1>
         <div className="carouselMain">
-            <img id="slides" className="slide" src={slideshow1} alt="Cookie disected" onClick={() => setModal1IsOpen(true)}></img>
+            <img id="slides" className="slide" src={slideshow1} alt="Cookie disected" onClick={() => modalOne()}></img>
             <Modal
           isOpen={modal1IsOpen}
           onRequestClose={() => setModal1IsOpen(false)}
@@ -43,11 +55,10 @@ console.log(allCookies)
         >
           <div className="recipeContainer">
           <button className="close" onClick={() => setModal1IsOpen(false)}>X</button>
-          <h1>Cookie 1</h1>
             <Recipe cookies={allCookies} />
             </div>
         </Modal>
-            <img id="slides" className="slide" src={slideshow2} alt="Cookies" onClick={() => setModal2IsOpen(true)}></img>
+            <img id="slides" className="slide" src={slideshow2} alt="Cookies" onClick={() => modalTwo()}></img>
             <Modal
           isOpen={modal2IsOpen}
           onRequestClose={() => setModal2IsOpen(false)}
@@ -56,11 +67,10 @@ console.log(allCookies)
         >
           <div className="recipeContainer">
           <button className="close" onClick={() => setModal2IsOpen(false)}>X</button>
-          <h1>Cookie 2</h1>
               <Recipe cookies={allCookies} />
             </div>
         </Modal>
-            <img id="slides" className="slide" src={slideshow3} alt="Cookie disected" onClick={() => setModal3IsOpen(true)}></img>
+            <img id="slides" className="slide" src={slideshow3} alt="Cookie disected" onClick={() => modalThree()}></img>
             <Modal
           isOpen={modal3IsOpen}
           onRequestClose={() => setModal3IsOpen(false)}
@@ -69,7 +79,6 @@ console.log(allCookies)
         >
           <div className="recipeContainer">
           <button className="close" onClick={() => setModal3IsOpen(false)}>X</button>
-                 <h1>Cookie 3</h1>
                  <Recipe cookies={allCookies} />
             </div>
         </Modal>
