@@ -6,7 +6,7 @@
   align-content: flex-end;
 }
 .navBtns{
-
+padding: 10px;
 }
 .mainContent{
   display: inline;
@@ -66,16 +66,7 @@
   .ReactModal__Overlay--before-close{
     
   }
- 
-  
- 
-
-/*******HOMEPAGE CSS*********/
-.carouselMain{
-
-}
-
-/*******FOOTER CSS*********/
+  /*******FOOTER CSS*********/
 .footerMain{
 
 }
@@ -83,4 +74,19 @@
 /*******COOKIES CSS*********/
 .cookiesMain{
 
+}
+
+/*******HOME SCREEN RECIPE POPUP CSS*********/
+.recipePopup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recipeTitle{
+  margin: 30px;
+}
+.ingredients{
+  display: inline;
+  margin: 15px;
+  text-align: left;
 }

@@ -2,7 +2,6 @@ import './style.css';
 import Modal from 'react-modal';
 import { loginUser } from "../utils";
 import { useState } from "react";
-import './style.css';
 
 //successful login needs to bring up dynamic user info
 const Login = ({newUser}) => {
@@ -16,6 +15,7 @@ const Login = ({newUser}) => {
         console.log(password)
         await loginUser(username, password, newUser)
     }
+
     function openModal() {
         setModalIsOpen(true);
     }
