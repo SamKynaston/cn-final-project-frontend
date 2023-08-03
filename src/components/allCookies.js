@@ -6,7 +6,6 @@ const Allcookies = () => {
     const [allCookies, setAllCookies] = useState([]);
     const [errorMessage, setErrorMessage] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [currentCookie, setCurrentCookie] = useState({});
 
 
     useEffect(() => {
@@ -34,14 +33,10 @@ const Allcookies = () => {
     }
 
     return (
-        <div className="allCats">
-            <h1>Recipes</h1>
-
-
+        
+        <div className="allCookies">
             {errorMessage && <h3>{errorMessage}</h3>}
             {allCookies.map((data, index) => {
-                setCurrentCookie(data)
-                console.log(currentCookie)
                 return (
                     <div className='CookieCard' key={index}>
                         <img src=
@@ -61,7 +56,7 @@ const Allcookies = () => {
                                 <p>{data.recipe.label}</p>
                             </div>
                         </Modal>
-                        <p>{currentCookie.recipe.label}</p>
+                        <p>{data.recipe.label}</p>
 
                     </div>
                 )
