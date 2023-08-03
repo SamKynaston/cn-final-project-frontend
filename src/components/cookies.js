@@ -14,7 +14,6 @@ const Cookies = () => {
                 }
                 const data = await response.json()
                 setAllCookies(data.hits);
-
             } catch (err) {
                 console.log(err)
                 setErrorMessage("Data Not Found!")

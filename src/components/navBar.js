@@ -22,7 +22,6 @@ const NavBar = () => {
                 <Login />
                 <Register />
             </div>
-            <h1>Cookie Club</h1>
     
         <Routes> 
             <Route index element={ <Home />} />

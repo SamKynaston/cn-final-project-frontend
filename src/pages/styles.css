@@ -1,0 +1,23 @@
+/*******HOMEPAGE CSS*********/
+.carouselMain{
+    background-color: #aaaaa0;
+    overflow: auto;
+    /* white-space: nowrap; */
+    padding: 8px;
+    height: 200px;
+    width: 360px;
+}
+.carouselMain img {
+    padding: 5px;
+    width: 300px;
+    height: 155px;
+    margin-bottom: 10px;
+}
+.slide{
+    min-width: 350px;
+    min-height: 100%;   
+    display: block;
+}
+.recipeContainer{
+    
+}
