@@ -21,3 +21,18 @@
 .recipeContainer{
     
 }
+
+.accbtn{
+    display:flex;
+    align-items: center;
+    height:40px;
+    width: 80px;
+    border-radius: 60%;
+    margin: 2px;
+    box-shadow: 4px 3px 6px -3px;
+    background-color: rgb(204, 204, 207);
+}
+.accbtn:hover {
+    background-color: rgb(144, 144, 147);
+    box-shadow: none;
+}
