@@ -1,10 +1,6 @@
 import './style.css';
-import { useState, useEffect } from 'react';
 
-const Cookies = ({setCurrentCookie}) => {
-
-
-
+const Cookies = ({}) => {
 
 return( 
 
