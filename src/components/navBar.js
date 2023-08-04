@@ -22,12 +22,6 @@ const NavBar = () => {
                 <Login /> 
                 <Register />
             </div>
-    
-        <Routes> 
-            <Route index element={ <Home />} />
-            <Route path="account" element={ <Account />} />
-            <Route path="recipes" element={ <Recipes />} />
-        </Routes>
         
             <div className="mainContent">
                 <Outlet />
