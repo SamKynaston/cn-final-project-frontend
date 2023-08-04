@@ -1,11 +1,13 @@
 /*******HOMEPAGE CSS*********/
 .carouselMain{
-    background-color: #aaaaa0;
+    background-color: #F6F6F6;
     overflow: auto;
-    /* white-space: nowrap; */
-    padding: 8px;
-    height: 200px;
-    width: 360px;
+    margin-top: 5%;
+    padding: 10px;
+    height: 500px;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
 }
 .carouselMain img {
     padding: 5px;
@@ -14,10 +16,19 @@
     margin-bottom: 10px;
 }
 .slide{
-    min-width: 350px;
+    width: 100%;
     min-height: 100%;   
     display: block;
 }
 .recipeContainer{
     
+}
+.name{
+    display: inline-flex;
+    color: #020504;
+    font-family: 'Montserrat', sans-serif
+}
+.carouselItem{
+display: flex;
+flex-direction: row;
 }

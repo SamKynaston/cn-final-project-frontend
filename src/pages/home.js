@@ -1,15 +1,11 @@
-import Recipe from '../components/recipe';
+// import Recipe from '../components/recipe';
 import Modal from 'react-modal';
-import slideshow1 from '../components/images/slideshow-1.png';
-import slideshow2 from '../components/images/slideshow-2.png';
-import slideshow3 from '../components/images/slideshow-3.png';
 import './styles.css';
+import slideOne from '../components/images/slideshow-1.png'
 import { useState, useEffect } from "react";
 
 const Home = () =>{
-    const [modal1IsOpen, setModal1IsOpen] = useState(false);
-    const [modal2IsOpen, setModal2IsOpen] = useState(false);
-    const [modal3IsOpen, setModal3IsOpen] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [allCookies, setAllCookies] = useState([]);
 
     const fetchData = async () => {
@@ -25,64 +21,34 @@ const Home = () =>{
             console.log(err)
         }
     }
-//     useEffect(() => {
-//     fetchData()
-// }, []);
+    useEffect(() => {
+    fetchData()
+}, []);
 console.log(allCookies)
-function modalOne(){
-  setAllCookies(fetchData());
-  setTimeout(() => {setModal1IsOpen(true)}, 1000);
-}
-function modalTwo(){
-  fetchData();
-  setTimeout(() => {setModal2IsOpen(true)}, 1000);
-}
-function modalThree(){
-  fetchData();
-  setTimeout(() => {setModal3IsOpen(true)}, 1000);
-}
 
     return (
-    <div className="random">
-        <h1>You are on the Home page</h1>
-        <div className="carouselMain">
-            <img id="slides" className="slide" src={slideshow1} alt="Cookie disected" onClick={() => modalOne()}></img>
+    <div className="carouselMain">
+    {allCookies.map((cookie, index) => {
+     return <div>
+      <div className="carouselItem">
+        <img key={index} id="slides" className="slide" src={cookie.recipe.images.SMALL.url} alt="Cookies" onClick={() => setModalIsOpen(true)}></img>
+        <h1 className="name">{cookie.recipe.label}</h1>
+        </div>
             <Modal
-          isOpen={modal1IsOpen}
-          onRequestClose={() => setModal1IsOpen(false)}
+          isOpen={modalIsOpen}
+          onRequestClose={() => setModalIsOpen(false)}
           ariaHideApp={false}
-          contentLabel='Recipe1'
+          contentLabel='Recipe'
         >
           <div className="recipeContainer">
-          <button className="close" onClick={() => setModal1IsOpen(false)}>X</button>
-            <Recipe cookies={allCookies} />
-            </div>
-        </Modal>
-            <img id="slides" className="slide" src={slideshow2} alt="Cookies" onClick={() => modalTwo()}></img>
-            <Modal
-          isOpen={modal2IsOpen}
-          onRequestClose={() => setModal2IsOpen(false)}
-          ariaHideApp={false}
-          contentLabel='Recipe2'
-        >
-          <div className="recipeContainer">
-          <button className="close" onClick={() => setModal2IsOpen(false)}>X</button>
-              <Recipe cookies={allCookies} />
-            </div>
-        </Modal>
-            <img id="slides" className="slide" src={slideshow3} alt="Cookie disected" onClick={() => modalThree()}></img>
-            <Modal
-          isOpen={modal3IsOpen}
-          onRequestClose={() => setModal3IsOpen(false)}
-          ariaHideApp={false}
-          contentLabel='Recipe3'
-        >
-          <div className="recipeContainer">
-          <button className="close" onClick={() => setModal3IsOpen(false)}>X</button>
-                 <Recipe cookies={allCookies} />
-            </div>
+          <button className="close" onClick={() => setModalIsOpen(false)}>X</button>
+          <h1>{cookie.recipe.label}</h1>
+        <h1 className="recipeTitle">{cookie.recipe.label}</h1>
+        <embed type="text/html" src={cookie.recipe.shareAs} width="1000" height="500"></embed>
+        </div>
         </Modal>
         </div>
+    })}      
     </div>
     )
 }
