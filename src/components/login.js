@@ -25,7 +25,7 @@ const Login = ({newUser}) => {
 
     return(
         <div className="loginMain">
-            <button className="btn" onClick={openModal}>Login</button>
+            <button className="lrbtn" onClick={openModal}>LOGIN</button>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -36,15 +36,17 @@ const Login = ({newUser}) => {
           <button className="close" onClick={closeModal}>X</button>
             <h1>Please login:</h1>
             <form onSubmit={submitHandler}>
-                <label className="label">Username:
-                    <input onChange= {(e) => setUsername(e.target.value)}></input>
+                <div className="inputs left">
+                <label className="loginLabel">USERNAME:
+                    <input className="loginInput" onChange= {(e) => setUsername(e.target.value)}></input>
                 </label>
             <br></br>
-                <label className="label">Password:
-                    <input type="password" onChange= {(e) => setPassword(e.target.value)}></input>
+                <label className="loginLabel">PASSWORD:
+                    <input type="password" className="loginInput" onChange= {(e) => setPassword(e.target.value)}></input>
                 </label>
+                </div>
             <br></br>
-                <button type="submit">Click to login</button>
+                <button className="loginBtn" type="submit">LOGIN</button>
             </form>
         </div>
         </Modal>
