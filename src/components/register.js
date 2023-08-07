@@ -23,11 +23,7 @@ const Register = () => {
 
     const submitHandler = async (e) => {
         e.preventDefault()
-        console.log(firstName)
-        console.log(lastName)
-        console.log(username)
-        console.log(email)
-        console.log(password)
+    
         await registerUser(username, email, password)
         setTimeout(() => closeModal(), 4000)
     }
