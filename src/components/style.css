@@ -1,36 +1,357 @@
+/* File: font.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 /*******NAVBAR CSS*********/
 .navbarMain{
-
+  display: flex;
+  flex-direction: row;
+  position: absolute; 
+  top: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  white-space: nowrap;
+  width: 100vw;
+  color: #020504;
+  height: 5vh;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
-.navBtns{
-
+.current{
+  color: #020504;
+  text-decoration: none;
+  font-size: 26px;
+  margin: 5px;
+}
+.page{
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration:none;
+  padding: 10px;
+  font-size: 20px;
+  color: #FF66C4;
+}
+.page:hover{
+  color: #020504;
+}
+.mainContent{
+  display: block;
+}
+.loginorreg{
+  display: flex;
+  align-items: center;
+  width:100px
 }
 
-/*******LOGIN CSS*********/
+/*******LOGIN/REGISTER CSS*********/
+.lrbtn{
+  color: #FF66C4;
+  display:flex;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  justify-content: space-between;
+  align-self: center;
+  margin: 2px;
+  margin-top: -10px;
+  background: none;
+  border: none;
+  width: 50px;
+  height: 3vh;
+  white-space: nowrap;
+}
+.lrbtn:hover {
+  color: #a91871;
+}
 .loginMain{
-
+  position: absolute;
+  right: 0;
+  margin-right: 15%;
 }
-.loginText{
-
+.registerMain{
+  position:absolute;
+  right: 0;
+  margin-right: 9%;
 }
-.registerText{
-
+.registerContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.loginContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.close{
+  align-self: flex-end;
+  padding-right: 20px;
+  padding-top: 4px;
+  font-weight: 900;
+  font-size: larger;
+  width: 15px;
+  border-radius: 35%;
+  margin: 2px;
+  box-shadow: 4px 3px 6px -3px #020504;
+  color: white;
+  background-color: #5CB8B2;
+}
+.close:hover {
+  background-color: #418681;
+  box-shadow: none;
+}
+.label{
+  font-size: 12px;
+  margin: 10px;
+}
+.opening{
+  margin-top: -40px;
+  font-size:35px;
+  font-family: 'Montserrat', sans-serif;
+}
+.inputs{
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  margin-left: 5px;
+  align-items: center;
+  text-align: center;
+  margin-left: 10vw;
+} 
+.left{
+ display:flex;
+ flex-direction: column;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content:flex-start;
+}
+.input{
+  display:flex;
+  margin-left:5px;
+  font-family: 'Montserrat', sans-serif;
+}
+.loginInput{
+  display:flex;
+  margin-left: -15px;
+  font-family: 'Montserrat', sans-serif;
+}
+.loginLabel{
+  font-size: 12px;
+  margin-left: -20px
+}
+.tsandcs{
+    text-decoration: none;
+    color: #020504;
+    display: flex;
+    flex-direction: row;
+}
+.text{
+  margin-left: 5px;
+}
+.tandc{
+    text-decoration: none;
+    color: #FF66C4;
+}
+.tandc:hover{
+  text-decoration:underline;
+  color: #020504;
 }
 .btn{
-
+  display: flex;
+  height: 45px;
+  min-width: 100px;
+  align-items: center;
+  justify-content: center;
+  align-self: end;
+  margin-bottom: 60px;
+  margin-right: 80px;
+  margin-left: -200px;
+  background-color: #5CB8B2;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+  border-radius: 42%;
+  border-style: none;
+  box-shadow: 4px 3px 6px -3px #020504
 }
-
-/*******HOMEPAGE CSS*********/
-.carouselMain{
-
+.btn:hover{
+  background-color: #418681;
+  box-shadow:none;
 }
+.registerBtn{
+  display: flex;
+  height: 45px;
+  min-width: 100px;
+  align-items: center;
+  justify-content: center;
+  align-self: end;
+  margin-bottom: 60px;
+  margin-left:18vw;
+  background-color: #5CB8B2;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+  border-radius: 42%;
+  border-style: none;
+  box-shadow: 4px 3px 6px -3px #020504
+}
+.registerBtn:hover{
+  background-color: #D5F7F5;
+  box-shadow:none;
+  color: #FF66C4;
+}
+.loginBtn{
+  display: flex;
+  height: 45px;
+  min-width: 100px;
+  align-items: center;
+  justify-content: center;
+  align-self: end;
+  margin-bottom: 60px;
+  margin-left:12vw;
+  background-color: #5CB8B2;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+  border-radius: 42%;
+  border-style: none;
+  box-shadow: 4px 3px 6px -3px #020504
+}
+.loginBtn:hover{
+  background-color: #D5F7F5;
+  box-shadow:none;
+  color: #FF66C4;
+}
+.ReactModal__Overlay{
+    position:absolute;
+  }
 
-/*******FOOTER CSS*********/
+
+  /*******FOOTER CSS*********/
 .footerMain{
-
+  display:flex;
+  margin-top: 50px;
+  position:relative;
+  height: 300px;
+  width: 100vw;
+  min-width: 900px;
+  background-image: url('./images/background.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.socials{
+display:flex;
+margin-left: 80px;
+flex-direction: column;
+justify-content: flex-start;
+justify-items: space-evenly;
+align-items: left;
+text-align: left;
+font-size:8px;
+white-space: nowrap;
+letter-spacing: 0.5px;
+margin-left: 30px;
+margin-top: 20px;
+font-size: 8px;
+font-family: 'Montserrat', sans-serif;
+color: #020504;
+}
+.socialLogos{
+  display:flex;
+  flex-direction: row;
+  margin-left: -18px;
+}
+.socialLogo{
+  margin: 20px;
+  height: 30px;
+  width: 30px;
+}
+.socialLogo:hover{
+  opacity:50%;
+}
+.contact{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  font-weight: bolder;
+  line-height: 0.5px;
+  align-items: flex-start;
+  position:absolute;
+  left:0;
+  bottom: 0;
+  margin: 40px;
+}
+.emailAdd{
+  font-family: 'Montserrat', sans-serif;
+  color: #020504;
+  font-size:14px;
+}
+.email{
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: #020504;
+  font-size:12px;
+  font-weight: lighter;
+}
+.email:hover{
+  text-decoration: underline;
+}
+.phoneNumLabel{
+  font-family: 'Montserrat', sans-serif;
+  color: #020504;
+  font-size:14px;
+}
+.phoneNum{
+  font-family: 'Montserrat', sans-serif;
+  color: #020504;
+  font-size:12px;
+  font-weight: lighter;
+}
+.phoneNum:hover{
+  text-decoration: underline;
+}
+.footerLogoDiv{
+  display:flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  margin-left: 15%;
+}
+.footerLogo{
+  width: 200px;
+  height: 200px;
+}
+.footerPicDiv{
+ display:flex;
+ justify-self: flex-end;
+}
+.footerPic{
+  height: 100%;
+  position: absolute;
+  right:0
 }
 
-/*******COOKIES CSS*********/
-.cookiesMain{
-
+@media screen and (max-width:1300px) {
+  .loginMain{
+    margin-right: 200px;
+  }
+  .registerMain{
+    margin-right: 120px
+  }
+  .search{
+    margin-right: 40px;
+  }
 }

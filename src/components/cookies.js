@@ -1,15 +1,13 @@
 import './style.css';
 
-const Cookies = () => {
+const Cookies = ({}) => {
+
+return( 
+
+    <div className=''></div>
 
 
-
-
-    return(
-        <div className="cookiesMain">
-
-        </div>
-    )
-}
-
+)
+   
+}//#endregion
 export default Cookies;

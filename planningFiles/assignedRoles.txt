@@ -1,0 +1,24 @@
+Overall design/ wireframe - Chloe
+Class names - Nathan
+ 
+API
+Chloe to provide information and images/ upload to url image host
+ 
+Always there components
+Navbar - Nathan (Login/ Sign in)
+Footer - Aaron
+Search Bar - LATER
+ 
+Homepage components
+Front page - Chloe
+Username (Edit and delete) - Aaron
+Email (Edit and delete) - Aaron
+Password (Edit and delete) - Aaron
+ 
+Recipe Page
+Favourite cookies/ recipies - Chloe
+Recipe page - Chloe
+Modal to display recipies - Chloe
+ 
+RENDER
+ 
