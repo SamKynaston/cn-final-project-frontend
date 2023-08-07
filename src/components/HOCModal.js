@@ -25,7 +25,6 @@ const HOCModal = (props) => {
                 ariaHideApp={false}
                 contentLabel='openCookie'
             >
-                {console.log("props.data.recipe: ", props.data.recipe)}
                 <div className="cookieContainer">
                     <button className="close" onClick={closeModal}>X</button>
                     <p>{props.data.recipe.label}</p>
@@ -40,11 +39,13 @@ const HOCModal = (props) => {
                     <p>{ingredient.text}</p>
                 ))}
                 <h2>Method</h2>
-                {props.data.recipe.ingredientLines.map((line, index) => (
-                    <p>{line}</p>
+                {props.data.recipe.url.map((method, index) => (
+                    <button>{method}</button>
                 ))}
             </Modal>
-            <p>{props.data.recipe.label}</p>
+            <div className='labelText'>
+            <p><b>{props.data.recipe.label}</b></p>
+            </div>
         </div>
     )
 }

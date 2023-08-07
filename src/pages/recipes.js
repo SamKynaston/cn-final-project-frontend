@@ -1,6 +1,5 @@
-import HOCModal from '../components/HOCModal';
 import Allcookies from '../components/allCookies';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 const Recipes = (props) => {
@@ -10,7 +9,7 @@ const Recipes = (props) => {
     return (
         <div>
             {errorMessage && <h3>{errorMessage}</h3>}
-            <h1>You are on the Recipe page</h1>
+            <h1>Recipe</h1>
             <Allcookies allCookies={props.allCookies}/>
         </div>
     )

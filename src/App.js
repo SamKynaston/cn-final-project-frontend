@@ -8,7 +8,7 @@ import Home from './pages/home';
 import Account from './pages/account';
 import Recipes from './pages/recipes';
 import NavBar from './components/navBar';
-import Allcookies from './components/allCookies';
+
 
 function App() {
   const [allCookies, setAllCookies] = useState([]);
