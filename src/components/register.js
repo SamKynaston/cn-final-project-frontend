@@ -1,10 +1,10 @@
 import React from "react";
 import Modal from 'react-modal';
 import { registerUser } from "../utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import DialogTitle from "@mui/material/DialogTitle";
+import Dialog from "@mui/material/Dialog";
 import './style.css';
-
-//successful register needs to bring up dynamic user info
 
 const Register = () => {
     const [firstName, setFirstName] = useState('');
@@ -12,7 +12,9 @@ const Register = () => {
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [passwordCheck, setPasswordCheck] = useState();
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modal2IsOpen, setModal2IsOpen] = useState(false);
 
     function openModal() {
         setModalIsOpen(true);
@@ -20,12 +22,21 @@ const Register = () => {
     function closeModal() {
         setModalIsOpen(false);
     }
+    function openModal2() {
+        setModal2IsOpen(true);
+    }
+    function closeModal2() {
+        setModal2IsOpen(false);
+    }
 
     const submitHandler = async (e) => {
         e.preventDefault()
-    
-        await registerUser(username, email, password)
+        if(passwordCheck === password){
+            await registerUser(firstName, lastName, username, email, password)
         setTimeout(() => closeModal(), 4000)
+        } else{
+   
+        }
     }
 
     return(
@@ -65,7 +76,7 @@ const Register = () => {
                 </label>
             <br></br>
                 <label className="label">TYPE PASSWORD AGAIN:
-                    <input className="input" type="password" onChange= {(e) => setPassword(e.target.value)} required></input>
+                    <input className="input" type="password" onChange= {(e) => setPasswordCheck(e.target.value)} required></input>
                 </label>
             </div>
             </div>
@@ -78,6 +89,17 @@ const Register = () => {
             </form>
           </div>
         </Modal>
+        <Modal
+          isOpen={modal2IsOpen}
+          onRequestClose={closeModal2}
+          ariaHideApp={false}
+          contentLabel='Register'
+        >
+            <h1> Passwords did not match! Please try again... </h1>
+            <h3>
+               Click outside of the dialog to close the Dialog box.
+            </h3>
+         </Modal>
         </div>
     )
 }
