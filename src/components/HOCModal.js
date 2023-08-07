@@ -1,5 +1,7 @@
 import Modal from 'react-modal';
 import { useState } from "react"
+import './HOCModal.css';
+import Arrow from "./images/arrow.png"
 
 
 const HOCModal = (props) => {
@@ -14,10 +16,10 @@ const HOCModal = (props) => {
 
     return (
         <div className='CookieCard' key={props.index}>
-            <img src=
+            <img className='cookieIMG' src=
                 {props.data.recipe.images.SMALL.url}
                 alt={props.data.recipe.label}
-                onClick={openModal}
+            // onClick={openModal}
             />
             <Modal
                 isOpen={modalIsOpen}
@@ -25,26 +27,42 @@ const HOCModal = (props) => {
                 ariaHideApp={false}
                 contentLabel='openCookie'
             >
-                <div className="cookieContainer">
-                    <button className="close" onClick={closeModal}>X</button>
-                    <p>{props.data.recipe.label}</p>
-                    <img src=
-                        {props.data.recipe.images.SMALL.url}
-                        alt={props.data.recipe.label}
-                        onClick={openModal}
-                    />
+                <div className="modalContainer">
+
+                    <div className="modalTop">
+
+                        <div className='modalLeft'>
+                            <img className='modalIMG' src=
+                                {props.data.recipe.images.SMALL.url}
+                                alt={props.data.recipe.label}
+                                onClick={openModal}
+                            />
+                        </div>
+
+                        <div className='modalRight'>
+                            <button className="closeBtn" onClick={closeModal}>X</button>
+                            <p className='modalTxt'>{props.data.recipe.label}</p>
+                            <h2>Ingredients</h2>
+                            {props.data.recipe.ingredients.map((ingredient, index) => (
+                                <p>{ingredient.text}</p>
+                            ))}
+                        </div>
+
+                    </div>
+
+                    <h2>Method</h2>
+                    <div>
+                        <a href={props.data.recipe.shareAs}>
+                            <button className='methodBtn'>Method</button>
+                        </a>
+                    </div>
                 </div>
-                <h2>Ingredients</h2>
-                {props.data.recipe.ingredients.map((ingredient, index) => (
-                    <p>{ingredient.text}</p>
-                ))}
-                <h2>Method</h2>
-                {props.data.recipe.url.map((method, index) => (
-                    <button>{method}</button>
-                ))}
+
+
             </Modal>
-            <div className='labelText'>
-            <p><b>{props.data.recipe.label}</b></p>
+            <div className='label'>
+                <p className='recipeTxt'>{props.data.recipe.label}</p>
+                <button className='modalBtn' onClick={openModal}>🡲</button>
             </div>
         </div>
     )
