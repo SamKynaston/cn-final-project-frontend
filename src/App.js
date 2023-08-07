@@ -8,6 +8,7 @@ import Home from './pages/home';
 import Account from './pages/account';
 import Recipes from './pages/recipes';
 import NavBar from './components/navBar';
+import Footer from './components/footer'
 
 function App() {
   const [allCookies, setAllCookies] = useState([]);
@@ -71,11 +72,13 @@ useEffect(() => {
   return (
     <div className="App">
         <NavBar newUser={newUser} setNewUser={setNewUser} loginCookie={loginCookie} setLoginCookie={setLoginCookie} />
+        
         <Routes> 
           <Route index element={ <Home cookies={allRandomCookies} />} />
           <Route path="account" element={ <Account loginCookie={loginCookie} />} />
           <Route path="recipes" element={ <Recipes allCookies={allCookies} />} />
         </Routes>
+        <Footer />
     </div>
   );
 }
