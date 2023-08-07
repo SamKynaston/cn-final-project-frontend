@@ -25,11 +25,12 @@ const Register = () => {
         e.preventDefault()
     
         await registerUser(username, email, password)
+        setTimeout(() => closeModal(), 4000)
     }
 
     return(
         <div className="registerMain">
-            <button className="btn" onClick={openModal}>Sign Up</button>
+            <button className="lrbtn" onClick={openModal}>SIGN UP</button>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -38,32 +39,42 @@ const Register = () => {
         >
           <div className="registerContainer">
           <button className="close" onClick={closeModal}>X</button>
-          <h1>What are you waiting for? Become a Cookie Connoisseur today!</h1>
+          <h1 className="opening">What are you waiting for? Become a Cookie Connoisseur today!</h1>
             <form onSubmit = {submitHandler}>
-                <label className="label">First Name:
-                    <input onChange= {(e) => setFirstName(e.target.value)} required></input>
-                </label>
-                <label className="label">Last Name:
-                    <input onChange= {(e) => setLastName(e.target.value)} required></input>
-                </label>
-            <br></br>
-                <label className="label">Username:
-                    <input onChange= {(e) => setUsername(e.target.value)} required></input>
+            <div className="inputs">
+            <div className="left">
+                <label className="label">FIRST NAME:
+                    <input className="input" onChange= {(e) => setFirstName(e.target.value)} required></input>
                 </label>
             <br></br>
-                <label className="label">Email:
-                    <input onChange= {(e) => setEmail(e.target.value)} required></input>
+                <label className="label">USERNAME:
+                    <input className="input" onChange= {(e) => setUsername(e.target.value)} required></input>
                 </label>
             <br></br>
-                <label className="label">Password:
-                    <input type="password" onChange= {(e) => setPassword(e.target.value)} required></input>
+                <label className="label">PASSWORD:
+                    <input className="input" type="password" onChange= {(e) => setPassword(e.target.value)} required></input>
+                </label>
+            </div>
+            <div className="right">
+                <label className="label">LAST NAME:
+                    <input className="input" onChange= {(e) => setLastName(e.target.value)} required></input>
                 </label>
             <br></br>
-                <label className="tsandcs">I have read and agree to the <a className="tandc" href="/">terms & conditions</a> of The Cookie Club.
-                    <input type="checkbox" id="tsandcs" name="tsandcs" value="Agree"></input>
+                <label className="label">EMAIL:
+                    <input className="input" onChange= {(e) => setEmail(e.target.value)} required></input>
                 </label>
             <br></br>
-                <button type="submit">Click to register</button>
+                <label className="label">TYPE PASSWORD AGAIN:
+                    <input className="input" type="password" onChange= {(e) => setPassword(e.target.value)} required></input>
+                </label>
+            </div>
+            </div>
+                <label className="tsandcs">
+                   <p> <input type="checkbox" id="checkbox" name="tsandcs" value="Agree"></input>
+                    <span className="text">I have read and agree to the <a className="tandc" href="/"> terms & conditions</a> of The Cookie Club.</span></p>
+                </label>
+            <br></br>
+                <button type="submit" className="registerBtn">Click to register</button>
             </form>
           </div>
         </Modal>
