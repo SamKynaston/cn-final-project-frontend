@@ -1,6 +1,8 @@
 import { writeCookie } from "../common";
 
 export const registerUser = async (username, email, password) => {
+
+  
     try {
         const response = await fetch('http://localhost:5001/users/register',
         {method: "POST",
@@ -8,7 +10,7 @@ export const registerUser = async (username, email, password) => {
             "Content-Type": "application/json",
             "Accept": "application/json"
         },
-        mode: "no-cors",
+        mode: "cors",
         body: JSON.stringify({
             "username": username,
             "email": email,
@@ -16,13 +18,14 @@ export const registerUser = async (username, email, password) => {
             })
         })
     const data = await response.json()
-    console.log("Data returned from Back-End - ", data)
+   
     } catch (error) {
        console.log(error)
     }
 }
 
 export const loginUser = async (username, password, newUser) => {
+
     try {
         const response = await fetch('http://localhost:5001/users/login', {
             method: "POST",

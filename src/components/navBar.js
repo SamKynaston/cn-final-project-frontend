@@ -1,10 +1,8 @@
 import './style.css';
 import Login from './login';
 import Register from './register';
-import { Outlet, Routes, Route, Link } from 'react-router-dom';
-import Home from '../pages/home';
-import Account from '../pages/account';
-import Recipes from '../pages/recipes';
+import { Outlet, NavLink } from 'react-router-dom';
+// import Search from './search'
 //Home button
 //Cookie club button
 //login/register section
@@ -14,13 +12,14 @@ const NavBar = () => {
         <>
         <div className="navbarMain">
             <nav>
-                <Link to="/">Home</Link>
-                <Link to="/account">Account</Link>
-                <Link to="/recipes">Recipe's</Link>
+                <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/">THE COOKIE CLUB</NavLink>
+                <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/account">ACCOUNT</NavLink>
+                <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/recipes">RECIPES</NavLink>
             </nav>
             <div className="loginorreg">
-                <Login />
+                <Login /> 
                 <Register />
+                {/* <Search /> */}
             </div>
         
             <div className="mainContent">
