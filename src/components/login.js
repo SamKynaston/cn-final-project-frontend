@@ -4,7 +4,7 @@ import { loginUser } from "../utils";
 import { useState } from "react";
 
 //successful login needs to bring up dynamic user info
-const Login = ({newUser}) => {
+const Login = (props) => {
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -13,7 +13,13 @@ const Login = ({newUser}) => {
         e.preventDefault()
         console.log(username)
         console.log(password)
-        await loginUser(username, password, newUser)
+        await loginUser(username, password, props.newUser, props.setNewUser, props.loginCookie, props.setLoginCookie)
+        if (!props.loginCookie){
+            console.log("Cookie not received, login unsuccessful.")
+        } else{
+            console.log("Cookie received, login successful.")
+        }
+        setTimeout(() => closeModal(), 4000)                                                                   
     }
 
     function openModal() {
