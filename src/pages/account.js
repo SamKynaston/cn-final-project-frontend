@@ -4,46 +4,85 @@ import "../components/style.css"
 import Modal from 'react-modal';
 const Account = (props) =>{
     const [user, setUser] = useState([]);
+    const [openPasswordModal, setOpenPasswordModal] = useState(false);
+    const [openEditEmailModal, setOpenEditEmailModal] = useState(false);
+    const [openEditUsernameModal, setOpenEditUsernameModal] = useState(false);
+
     useEffect (() => {
         fetchUsers(props.newUser.username, setUser);
     }, []);
 
+function openPasswordModal(){
+    setOpenPasswordModal(true)
+}
+function openEditModal(fieldToEdit){
+    (fieldToEdit == email)?
+    setOpenEditEmailModal(true):
+    setOpenEditUsernameModal(true)
+}
+
+
 return (
     <div> 
     <h1 className="opening">Account Details</h1>
-            <form onSubmit = {submitHandler}>
             <div className="inputs">
             <div className="left">
                 <label className="label">FIRST NAME:{user.forename} </label>
                 <label className="label">SURNAME:{user.surname} </label>
             <br></br>
                 <label className="label">USERNAME:{user.username} </label>
+                <button className='' onSubmit={() => openEditModal(username)}> Change Username </button>
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={() => setModalIsOpen(false)}
+                    ariaHideApp={false}
+                    contentLabel=''
+                    >
+                    <div className="recipeContainer">
+                        <button className="close" onClick={() => setModalIsOpen(false)}>X</button>
+                        <h1 className="recipeTitle">{props.cookie.cookieName}</h1>
+                        <div className="ingreds">{ingreds}</div>
+                        <div className="site">
+                        <iframe className="embed" title={props.cookie.id} src={props.cookie.cookieUrl} width="800" height="500"></iframe>
+                        </div>
+                    </div>
+                </Modal>
+                <label className="label">EMAIL:{user.email} </label>
+                <button className='changepassword' onSubmit={() => openEditModal(email)}> Change Email </button>
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={() => setModalIsOpen(false)}
+                    ariaHideApp={false}
+                    contentLabel='Email'
+                    >
+                    <div className="recipeContainer">
+                        <button className="close" onClick={() => setModalIsOpen(false)}>X</button>
+                        <h1 className="recipeTitle">{props.cookie.cookieName}</h1>
+                        <div className="ingreds">{ingreds}</div>
+                        <div className="site">
+                        <iframe className="embed" title={props.cookie.id} src={props.cookie.cookieUrl} width="800" height="500"></iframe>
+                        </div>
+                    </div>
+                </Modal>
             <br></br>
-            <label className="label">EMAIL:{user.email} </label>
-            <br></br>
-            <button className='changepassword' onSubmit={() => openPasswordModal}> Change Password </button>
+                <button className='changepassword' onSubmit={() => openPasswordModal}> Change Password </button>
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={() => setModalIsOpen(false)}
+                    ariaHideApp={false}
+                    contentLabel='Recipe'
+                    >
+                    <div className="recipeContainer">
+                        <button className="close" onClick={() => setModalIsOpen(false)}>X</button>
+                        <h1 className="recipeTitle">{props.cookie.cookieName}</h1>
+                        <div className="ingreds">{ingreds}</div>
+                        <div className="site">
+                        <iframe className="embed" title={props.cookie.id} src={props.cookie.cookieUrl} width="800" height="500"></iframe>
+                        </div>
+                    </div>
+                </Modal>
             </div>
-            <div className="right">
-                <label className="label">LAST NAME:
-                    <input className="input" onChange= {(e) => setLastName(e.target.value)} required></input>
-                </label>
-            <br></br>
-                <label className="label">EMAIL:
-                    <input className="input" onChange= {(e) => setEmail(e.target.value)} required></input>
-                </label>
-            <br></br>
-                <label className="label">TYPE PASSWORD AGAIN:
-                    <input className="input" type="password" onChange= {(e) => setPasswordCheck(e.target.value)} required></input>
-                </label>
             </div>
-            </div>
-                <label className="tsandcs">
-                   <p> <input type="checkbox" id="checkbox" name="tsandcs" value="Agree"></input>
-                    <span className="text">I have read and agree to the <a className="tandc" href="/"> terms & conditions</a> of The Cookie Club.</span></p>
-                </label>
-            <br></br>
-                <button type="submit" className="registerBtn">Click to register</button>
-            </form>
           </div>
 
 

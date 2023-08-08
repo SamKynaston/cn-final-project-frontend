@@ -88,11 +88,11 @@ export const handleDelete = async (userID) => {
             headers: {"Content-Type": "application/json",
             "Access-Control-Allow-Origin": "http://localhost:5001"},
             body: JSON.stringify({
-                id: userID,
+                id: userID
             })
         })
         const data = await response.json()
-        setUser(data.user);
+        setUser('');
     } catch (error) {
         console.error("error updating user", error);
     }
