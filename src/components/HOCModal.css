@@ -1,0 +1,124 @@
+.label {
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 20px;
+}
+
+.cookieIMG {
+    display: flex;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    width: 216px;
+}
+
+.recipeTxt {
+    padding-top: 5px;
+    width: 150px;
+    height: auto;
+    font-weight: bolder;
+}
+
+.modalBtn {
+    margin-top: 16px;
+    background-color: #5CB8B2;
+    color: white;
+    width: 40px;
+    height: 25px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    justify-content: center;
+
+}
+
+/*******RECIPE MODAL*********/
+
+.closeBtn {
+    background-color: #5CB8B2;
+    color: white;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    width: 30px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    justify-content: center;
+    padding-top: 3px;
+
+}
+
+.modalContainer {
+    background-color: #F6F6F6;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.modalTop {
+    display: flex;
+
+}
+
+.modalLeft {
+    display: flex;
+}
+
+.modalRight {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+
+
+}
+
+.modalIMG {
+    width: 215px;
+    height: fit-content;
+    box-sizing: border-box;
+    color: white;
+
+}
+
+.modalTxt {
+    display: flex;
+    margin-left: 0px;
+    padding-top: 10px;
+    padding-left: 0px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: left;
+    color: #FF66C4;
+    width: 200px;
+}
+
+
+
+
+/* .modalBtn:focus { 
+  background-color: #31726e;
+  color: #ffffff;
+}
+
+.modalBtn:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+.modalBtn:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+} */

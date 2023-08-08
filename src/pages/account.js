@@ -36,8 +36,6 @@ const Account = () =>{
         }
     }
 
-    
-
 
 return (
     <div>
