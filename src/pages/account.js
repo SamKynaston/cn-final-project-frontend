@@ -74,7 +74,7 @@ return (
     // </ul>
     // </div>
 )
-// }
+}
 
 
 export default Account;

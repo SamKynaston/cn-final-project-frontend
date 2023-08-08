@@ -8,7 +8,7 @@
     background-image: url('./images/background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100vmax;
+    /* width: 100vmax; */
     height: 400px;
 }
 

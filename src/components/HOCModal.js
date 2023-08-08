@@ -2,10 +2,9 @@ import Modal from 'react-modal';
 import { useState } from "react"
 import './HOCModal.css';
 
-
-
 const HOCModal = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
+
 
     function openModal() {
         setModalIsOpen(true);
