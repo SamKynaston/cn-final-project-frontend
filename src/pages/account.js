@@ -10,7 +10,7 @@ return (
     <div>
     <h1>Account</h1>
 
-    <button className="accbtn" onClick={() => handleEdit (user.id, user)}>Edit</button>
+    <button className="accbtn" onClick={() => handleEdit(updateKey, updateValue, user.id)}>Edit</button>
     <button className ="accbtn" onClick={() => handleDelete (user.id)}>Delete</button>
     <ul>
         {user.map((user) => (
