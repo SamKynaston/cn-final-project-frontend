@@ -2,6 +2,7 @@ import './style.css';
 import Login from './login';
 import Register from './register';
 import { Outlet, NavLink } from 'react-router-dom';
+import { CookieLogo } from '../components/images/cookie-logo.png'
 // import Search from './search'
 //Home button
 //Cookie club button
@@ -34,7 +35,7 @@ const NavBar = (props) => {
         <>
         <div className="navbarMain">
             <nav>
-                <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/">THE COOKIE CLUB</NavLink>
+                <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/"><image className='cookieLogo' src={CookieLogo} alt="" /></NavLink>
                 <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/recipes">RECIPES</NavLink>
                 {loginOrAccount(props.loginCookie, props.setLoginCookie)}
             </nav>
