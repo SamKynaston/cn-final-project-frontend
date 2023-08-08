@@ -4,21 +4,21 @@ import "../components/style.css"
 import Modal from 'react-modal';
 const Account = (props) =>{
     const [user, setUser] = useState([]);
-    const [openPasswordModal, setOpenPasswordModal] = useState(false);
-    const [openEditEmailModal, setOpenEditEmailModal] = useState(false);
-    const [openEditUsernameModal, setOpenEditUsernameModal] = useState(false);
+    const [passwordModal, setPasswordModal] = useState(false);
+    const [emailModal, setEmailModal] = useState(false);
+    const [usernameModal, setUsernameModal] = useState(false);
 
     useEffect (() => {
         fetchUsers(props.newUser.username, setUser);
     }, []);
 
 function openPasswordModal(){
-    setOpenPasswordModal(true)
+    setPasswordModal(true)
 }
 function openEditModal(fieldToEdit){
     (fieldToEdit == email)?
-    setOpenEditEmailModal(true):
-    setOpenEditUsernameModal(true)
+    setEmailModal(true):
+    setUsernameModal(true)
 }
 
 
@@ -48,19 +48,21 @@ return (
                     </div>
                 </Modal>
                 <label className="label">EMAIL:{user.email} </label>
-                <button className='changepassword' onSubmit={() => openEditModal(email)}> Change Email </button>
+                <button className='changeEmail' onSubmit={() => emailModal(true)}> Change Email </button>
                 <Modal
-                    isOpen={modalIsOpen}
-                    onRequestClose={() => setModalIsOpen(false)}
+                    isOpen={emailModal}
+                    onRequestClose={() => setEmailModal(false)}
                     ariaHideApp={false}
                     contentLabel='Email'
                     >
-                    <div className="recipeContainer">
-                        <button className="close" onClick={() => setModalIsOpen(false)}>X</button>
-                        <h1 className="recipeTitle">{props.cookie.cookieName}</h1>
-                        <div className="ingreds">{ingreds}</div>
-                        <div className="site">
-                        <iframe className="embed" title={props.cookie.id} src={props.cookie.cookieUrl} width="800" height="500"></iframe>
+                    <div className="emailContainer">
+                        <button className="close" onClick={() => setEmailModal(false)}>X</button>
+                        <div className="emailInModal">EMAIL:{user.email} </div>
+                        <div className="editEmailField">
+                            <label className="label">NEW EMAIL:
+                                <input className="input" required></input>
+                                <button onSubmit={} >Submit</button>
+                            </label>
                         </div>
                     </div>
                 </Modal>
