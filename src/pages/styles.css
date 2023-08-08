@@ -5,6 +5,17 @@
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
+
+.mainHomeImg {
+    display: flex;
+    width: 100px;
+
+
+}
+
+.slideone {
+    
+}
 .title{
     font-size:80px;
     margin-top: 55px;
@@ -16,8 +27,8 @@
 .carouselMain{
     overflow: auto;
     padding: 10px;
-    height: 50vh;
-    width: 90vw;
+    height: 70vh;
+    width: 100vw;
     /* margin-left: 10vw; */
 }
 

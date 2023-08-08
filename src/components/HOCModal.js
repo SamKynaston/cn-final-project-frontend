@@ -53,7 +53,7 @@ const HOCModal = (props) => {
 
                     <h2 className='PrepTXT'>Preparation</h2>
                     <div>
-                        <a href={props.data.recipe.shareAs}>
+                        <a href={props.data.recipe.shareAs} target="_blank" >
                             <button className='methodBtn'>Instructions 🡲</button>
                         </a>
                     </div>
