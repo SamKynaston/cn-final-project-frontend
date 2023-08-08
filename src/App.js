@@ -8,11 +8,15 @@ import Home from './pages/home';
 import Account from './pages/account';
 import Recipes from './pages/recipes';
 import NavBar from './components/navBar';
+import Footer from './components/footer'
 
 function App() {
   const [allCookies, setAllCookies] = useState([]);
   const [allRandomCookies, setAllRandomCookies] = useState([]);
   const [errorMessage, setErrorMessage] = useState([]);
+  const [newUser, setNewUser] = useState("");
+  const [loginCookie, setLoginCookie] = useState('');
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,7 +55,7 @@ useEffect(() => {
             return {
                 cookieImage: cookie.recipe.images.REGULAR.url,
                 cookieName: cookie.recipe.label,
-                cookieUrl: cookie.recipe.shareAs,
+                cookieUrl: cookie.recipe.url,
                 cookieIngredients: ingredients
             }
         })
@@ -67,12 +71,14 @@ useEffect(() => {
 
   return (
     <div className="App">
-        <NavBar />
+        <NavBar newUser={newUser} setNewUser={setNewUser} loginCookie={loginCookie} setLoginCookie={setLoginCookie} />
+        
         <Routes> 
           <Route index element={ <Home cookies={allRandomCookies} />} />
-          <Route path="account" element={ <Account />} />
+          <Route path="account" element={ <Account loginCookie={loginCookie} />} />
           <Route path="recipes" element={ <Recipes allCookies={allCookies} />} />
         </Routes>
+        <Footer />
     </div>
   );
 }

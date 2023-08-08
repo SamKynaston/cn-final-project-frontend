@@ -1,6 +1,9 @@
 import {useState, useEffect} from 'react';
 import Allcookies from '../components/allCookies';
 
+// receives prop.loginToken to determine whether to show page.
+
+
 const Account = () =>{
     const [users, setUsers] = useState([]);
     useEffect (() => {
