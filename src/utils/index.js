@@ -25,7 +25,6 @@ export const registerUser = async (firstName, lastName, username, email, passwor
 }
 
 export const loginUser = async (username, password, newUser, setNewUser, loginCookie, setLoginCookie) => {
-    console.log(setNewUser)
     try {
         const response = await fetch('http://localhost:5001/users/login', {
             method: "POST",
@@ -36,13 +35,36 @@ export const loginUser = async (username, password, newUser, setNewUser, loginCo
                 "password": password
             })
         })
-        console.log("Username = ", username)
-        console.log("Password = ", password)
         const data = await response.json()
         console.log("Data returned from Back-End - ", data)
-        setNewUser(data.user.username)
+        setNewUser(data.user)
+        console.log("Logged in user: ", newUser)
         writeCookie("jwt_token", data.token, 7, loginCookie, setLoginCookie)  
     } catch (error) {
         console.log(error)
     }
+}
+
+export const fetchUsers = async (username, setUser) => {
+    try {
+        const response = await fetch('http://localhost:5001/user/find', {
+            method: "GET",
+            headers: {"Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "http://localhost:5001"},
+            body: JSON.stringify({
+                "username": username
+            })
+        })
+        setUser(response.data);
+    } catch (error) {
+        console.error("error fetching user", error);
+    }
+};
+
+export const handleEdit = async (id, updatedUser) => {
+    
+}
+
+export const handleDelete = async (id) => {
+    
 }

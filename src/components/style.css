@@ -51,7 +51,7 @@
 }
 
 /*******LOGIN/REGISTER CSS*********/
-.lrbtn, .logout{
+.lrbtn{
   color: #FF66C4;
   display:flex;
   font-family: 'Montserrat', sans-serif;
@@ -66,7 +66,7 @@
   height: 3vh;
   white-space: nowrap;
 }
-.lrbtn:hover, .logout:hover{
+.lrbtn:hover{
   color: #a91871;
 }
 .loginMain{
@@ -250,7 +250,31 @@
   }
 
 
-  /*******FOOTER CSS*********/
+  /*******LOGOUT CSS*********/
+  .accAndLogoutDiv{
+    display: flex;
+  }
+  .logout{
+    color: #FF66C4;
+    display:flex;
+    position: absolute;
+    right: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    justify-content: space-between;
+    align-self: center;
+    margin: 2px;
+    margin-top: -27px;
+    background: none;
+    border: none;
+    width: 50px;
+    height: 3vh;
+    white-space: nowrap;
+  }
+  .logout:hover{
+    color: #a91871;
+  }
 
 
 @media screen and (max-width:1300px) {

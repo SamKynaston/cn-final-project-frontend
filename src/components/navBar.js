@@ -1,34 +1,11 @@
 import './style.css';
-import Login from './login';
-import Register from './register';
+import LoginOrAcc from './loginOrAcc';
+import Logout from './logout';
 import { Outlet, NavLink } from 'react-router-dom';
 // import Search from './search'
-//Home button
-//Cookie club button
-//login/register section
-
+import { useState } from 'react';
 
 const NavBar = (props) => {
-
-    function loginOrAccount(props){
-        if(!props.loginCookie){
-            return(
-            <div className="loginorreg">
-                <Login newUser={props.newUser} setNewUser={props.setNewUser} loginCookie={props.loginCookie} setLoginCookie={props.setLoginCookie} /> 
-                <Register />
-            </div>)
-        } else{
-            return(
-                <div>
-                    <div>
-                    <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/account">ACCOUNT</NavLink>
-                    </div>
-                    <div>
-                    <button className="logOut" onClick={()=> props.setLoginCookie('')}> </button>
-                    </div>
-                </div>)
-        }
-    }
 
     return(
         <>
@@ -36,11 +13,13 @@ const NavBar = (props) => {
             <nav>
                 <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/">THE COOKIE CLUB</NavLink>
                 <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/recipes">RECIPES</NavLink>
-                {loginOrAccount(props.loginCookie, props.setLoginCookie)}
             </nav>
-            
-            
-        
+                {props.loginCookie
+                ?
+                <Logout setLoginCookie={props.setLoginCookie} /> 
+                 :
+                 <LoginOrAcc loginCookie={props.loginCookie} setLoginCookie={props.setLoginCookie} newUser={props.newUser} setNewUser={props.setNewUser} /> 
+                 }
             <div className="mainContent">
                 <Outlet />
             </div>
