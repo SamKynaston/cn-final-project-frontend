@@ -45,7 +45,7 @@ const HOCModal = (props) => {
                            
                             <h2 className='IngredHEAD'>Ingredients</h2>
                             {props.data.recipe.ingredients.map((ingredient, index) => (
-                                <p className='IngredientTXT'>{ingredient.text}</p>
+                                <p className='IngredientTXT' key={index}>{ingredient.text}</p>
                             ))}
                         </div>
 
@@ -53,7 +53,7 @@ const HOCModal = (props) => {
 
                     <h2 className='PrepTXT'>Preparation</h2>
                     <div>
-                        <a href={props.data.recipe.shareAs} target="_blank" >
+                        <a href={props.data.recipe.shareAs} target="_blank" rel="noreferrer">
                             <button className='methodBtn'>Instructions 🡲</button>
                         </a>
                     </div>

@@ -16,7 +16,8 @@ const Home = (props) =>{
         <div className="homePage">
             <div className='mainHomeImg'> 
             <img className='slideone' src={Slideone} alt='slide one' />
-            
+            <h2 className='cookietag'>COOKIE OF THE WEEK </h2>
+            <p className='cookiebio'>After much thought we have decided to champion this deluxe Oreo cookie to be our cookie of the week. Thank you to everyone who voted, be sure to checkout our other recipes below.  </p>
             
             
             

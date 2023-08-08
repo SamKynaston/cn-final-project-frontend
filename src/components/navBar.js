@@ -10,13 +10,12 @@ import { Outlet, NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
 
-    function loginOrAccount(loginCookie, setLoginCookie){
-        if(!loginCookie){
+    function loginOrAccount(props){
+        if(!props.loginCookie){
             return(
             <div className="loginorreg">
-                <Login newUser={props.newUser} setNewUser={props.setNewUser} loginCookie={loginCookie} setLoginCookie={setLoginCookie} /> 
+                <Login newUser={props.newUser} setNewUser={props.setNewUser} loginCookie={props.loginCookie} setLoginCookie={props.setLoginCookie} /> 
                 <Register />
-                {/* <Search /> */}
             </div>)
         } else{
             return(
@@ -25,10 +24,9 @@ const NavBar = (props) => {
                     <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/account">ACCOUNT</NavLink>
                     </div>
                     <div>
-                    <button className="logOut" onClick={()=> setLoginCookie('')}> </button>
+                    <button className="logOut" onClick={()=> props.setLoginCookie('')}> </button>
                     </div>
                 </div>)
-            {/* <Search /> */}
         }
     }
 
