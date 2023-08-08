@@ -14,7 +14,7 @@ function App() {
   const [allCookies, setAllCookies] = useState([]);
   const [allRandomCookies, setAllRandomCookies] = useState([]);
   const [newUser, setNewUser] = useState("");
-  const [loginCookie, setLoginCookie] = useState('');
+  const [loginCookie, setLoginCookie] = useState(false);
 
 
   useEffect(() => {
