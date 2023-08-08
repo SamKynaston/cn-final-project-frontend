@@ -10,7 +10,7 @@ const Recipes = (props) => {
     return (
         <div className='recipePage'>
             {errorMessage && <h3>{errorMessage}</h3>}
-            <h1>Recipe</h1>
+            <h1 className='recipeHEAD'>Recipes</h1>
             <Allcookies allCookies={props.allCookies}/>
         </div>
     )

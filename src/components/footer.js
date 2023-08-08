@@ -1,4 +1,4 @@
-import './style.css';
+import './footer.css';
 
 const Footer = () => {
 
@@ -19,9 +19,7 @@ const Footer = () => {
                 <p className="phoneNumLabel">PHONE NUMBER</p>
                 <p className="phoneNum">01234-COOKIES</p>
             </div>
-            <div className="footerLogoDiv">
-                <img className="footerLogo" src={require("./images/approved.png")} alt="Hand holding cookie"></img>
-            </div>
+        
             <div className="footerPicDiv">
                 <img className="footerPic" src={require("./images/hand-footer.png")} alt="Hand holding cookie"></img>
             </div>
