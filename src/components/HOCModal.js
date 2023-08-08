@@ -1,7 +1,7 @@
 import Modal from 'react-modal';
 import { useState } from "react"
 import './HOCModal.css';
-import Arrow from "./images/arrow.png"
+
 
 
 const HOCModal = (props) => {
@@ -32,28 +32,29 @@ const HOCModal = (props) => {
                     <div className="modalTop">
 
                         <div className='modalLeft'>
+                            <button className="closeBtn" onClick={closeModal}>X</button>
                             <img className='modalIMG' src=
                                 {props.data.recipe.images.SMALL.url}
                                 alt={props.data.recipe.label}
                                 onClick={openModal}
                             />
+                            <p className='modalTxt'>{props.data.recipe.label}</p>
                         </div>
 
                         <div className='modalRight'>
-                            <button className="closeBtn" onClick={closeModal}>X</button>
-                            <p className='modalTxt'>{props.data.recipe.label}</p>
-                            <h2>Ingredients</h2>
+                           
+                            <h2 className='IngredHEAD'>Ingredients</h2>
                             {props.data.recipe.ingredients.map((ingredient, index) => (
-                                <p>{ingredient.text}</p>
+                                <p className='IngredientTXT'>{ingredient.text}</p>
                             ))}
                         </div>
 
                     </div>
 
-                    <h2>Method</h2>
+                    <h2 className='PrepTXT'>Preparation</h2>
                     <div>
                         <a href={props.data.recipe.shareAs}>
-                            <button className='methodBtn'>Method</button>
+                            <button className='methodBtn'>Instructions 🡲</button>
                         </a>
                     </div>
                 </div>
