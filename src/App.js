@@ -69,7 +69,7 @@ useEffect(() => {
         <NavBar newUser={newUser} setNewUser={setNewUser} loginCookie={loginCookie} setLoginCookie={setLoginCookie} />
         <Routes> 
           <Route index element={ <Home cookies={allRandomCookies} />} />
-          <Route path="account" element={ <Account loginCookie={loginCookie} />} />
+          <Route path="account" element={ <Account newUser={newUser} setNewUser={setNewUser} />} />
           <Route path="recipes" element={ <Recipes allCookies={allCookies} />} />
         </Routes>
         <Footer />
