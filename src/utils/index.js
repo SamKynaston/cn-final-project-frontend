@@ -55,16 +55,45 @@ export const fetchUsers = async (username, setUser) => {
                 "username": username
             })
         })
-        setUser(response.data);
+        const data = await response.json()
+        setUser(data.user);
     } catch (error) {
         console.error("error fetching user", error);
     }
 };
 
-export const handleEdit = async (id, updatedUser) => {
-    
+export const handleEdit = async (updateKey, updateValue, userID) => {
+    try {
+        const response = await fetch('http://localhost:5001/user/edit', {
+            method: "PATCH",
+            headers: {"Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "http://localhost:5001"},
+            body: JSON.stringify({
+                id: userID,
+                updateKey : updateKey,
+                updateValue: updateValue
+            })
+        })
+        const data = await response.json()
+        setUser(data.user);
+    } catch (error) {
+        console.error("error updating user", error);
+    }
 }
 
-export const handleDelete = async (id) => {
-    
+export const handleDelete = async (userID) => {
+    try {
+        const response = await fetch('http://localhost:5001/user/delete', {
+            method: "DELETE",
+            headers: {"Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "http://localhost:5001"},
+            body: JSON.stringify({
+                id: userID
+            })
+        })
+        const data = await response.json()
+        setUser('');
+    } catch (error) {
+        console.error("error updating user", error);
+    }
 }
