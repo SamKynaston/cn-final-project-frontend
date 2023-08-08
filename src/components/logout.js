@@ -3,12 +3,12 @@ import './style.css';
 
  const Logout = (props) => {
             return(
-                <div>
-                    <div>
+                <div className="accAndLogoutDiv">
+                    <div className="accountBtnDiv">
                     <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/account">ACCOUNT</NavLink>
                     </div>
-                    <div>
-                    <button className="logOut" onClick={()=> props.setLoginCookie('')}>Logout </button>
+                    <div className="logoutDiv">
+                    <button className="logOut" onClick={()=> props.setLoginCookie('')}>Logout</button>
                     </div>
                 </div>)
         }

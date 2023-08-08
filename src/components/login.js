@@ -11,9 +11,6 @@ const Login = (props) => {
     
     const submitHandler = async (e) => {
         e.preventDefault()
-        console.log("props login.js= ",props)
-        console.log(username)
-        console.log(password)
         await loginUser(username, password, props.newUser, props.setNewUser, props.loginCookie, props.setLoginCookie)
         setTimeout(() => closeModal(), 4000)                                                                   
     }

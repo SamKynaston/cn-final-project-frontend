@@ -6,9 +6,6 @@ import { Outlet, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 const NavBar = (props) => {
-    const [test, setTest] = useState(false);
-console.log("Navbar props: ", props)
-
 
     return(
         <>
