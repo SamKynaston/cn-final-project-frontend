@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { handleEdit, handleDelete, fetchUsers } from '../utils'
 import "../components/style.css"
 import Modal from 'react-modal';
+
 const Account = (props) => {
         //     const [user, setUser] = useState([]);
         //     const [passwordModal, setPasswordModal] = useState(false);
@@ -91,28 +92,16 @@ const Account = (props) => {
 
 
 
-        // <div>
-        // <h1>Account</h1>
 
-        // <button className="accbtn" onClick={() => handleEdit (user.id, user)}>Edit</button>
-        // <button className ="accbtn" onClick={() => handleDelete (user.id)}>Delete</button>
-        // <ul>
-        //     {user.map((user) => (
-        //         <li key = {user.id}>
-        //             <span>
-        //                 Name: {user.name}
-        //             </span>
-        //             <span>
-        //                 Email: {user.email}
-        //             </span>
-        //             <span>
-        //                 Password: {user.password}
-        //             </span>
-        //         </li>
-        //     ))}
-        // </ul>
-        // </div>
-//     )
+        
+
+
+
+
+
+
+
+    
 }
 
 
