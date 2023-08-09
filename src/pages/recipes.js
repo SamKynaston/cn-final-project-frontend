@@ -1,4 +1,5 @@
 import Allcookies from '../components/allCookies';
+import './recipe.css';
 
 const Recipes = (props) => {
     
