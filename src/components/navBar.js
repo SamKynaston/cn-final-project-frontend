@@ -4,9 +4,6 @@ import Logout from './logout';
 import { Outlet, NavLink } from 'react-router-dom';
 import logo from "./images/cookie-logo.png"
 
-// import Search from './search'
-import { useState } from 'react';
-
 const NavBar = (props) => {
 
     return(
@@ -22,7 +19,7 @@ const NavBar = (props) => {
                 ?
                 <Logout setLoginCookie={props.setLoginCookie} /> 
                  :
-                 <LoginOrAcc loginCookie={props.loginCookie} setLoginCookie={props.setLoginCookie} newUser={props.newUser} setNewUser={props.setNewUser} /> 
+                 <LoginOrAcc loginCookie={props.loginCookie} setLoginCookie={props.setLoginCookie} newUser={props.newUser} setNewUser={props.setNewUser} token={props.token} setToken={props.setToken}/> 
                  }
             <div className="mainContent">
                 <Outlet />
