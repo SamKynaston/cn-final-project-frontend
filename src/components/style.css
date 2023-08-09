@@ -1,182 +1,226 @@
 /* File: font.css */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
 /*******NAVBAR CSS*********/
-.navbarMain{
+.navbarMain {
   display: flex;
   flex-direction: row;
-  position: absolute; 
+  position: sticky;
+  position: -webkit-sticky;
   top: 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
+  letter-spacing: 0.5px;
   font-weight: bolder;
   white-space: nowrap;
-  width: 100vw;
+  width: 100vmax;
   color: #020504;
-  height: 5vh;
-  align-items: center;
+  /* height: 4vh; */
   text-decoration: none;
-  /* margin-left: 20px; */
-  /* margin-top: 15px; */
-  margin-bottom: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #F6F6F6;
-  
-  
+  padding-top: 3vh;
+  background-color: white;
+  z-index: 999;
+
 }
-.current{
+
+.navbarMainChild {
+  padding-bottom: 10px;
+}
+
+.navbarMainChild1 {
+  padding-top: 4px;
+}
+
+.logo {
+  width: 200px;
+  padding-left: 3vh;
+}
+
+.current {
   color: #020504;
   text-decoration: none;
-  font-size: 26px;
+  font-size: 18px;
   margin: 5px;
 }
-.page{
+
+.page {
   margin-left: 10px;
   margin-right: 10px;
-  text-decoration:none;
+  text-decoration: none;
   padding: 10px;
-  font-size: 20px;
+  font-size: 16px;
   color: #FF66C4;
 }
-.page:hover{
+
+.page:hover {
   color: #020504;
 }
-.mainContent{
+
+.mainContent {
   display: block;
 }
-.loginorreg{
+
+.loginorreg {
   display: flex;
   align-items: center;
-  width:100px
+  width: 100px
 }
 
 /*******LOGIN/REGISTER CSS*********/
-.lrbtn{
+
+.registerMain {
+  position: absolute;
+  right: 0;
+  margin-right: 9%;
+}
+
+.lrbtn {
   color: #FF66C4;
-  display:flex;
+  display: flex;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
+  letter-spacing: 0.5px;
   font-weight: bolder;
-  justify-content: space-between;
-  align-self: center;
-  margin-top: -27px;
+  /* justify-content: space-between; */
+  /* align-self: center; */
+  margin-top: -18px;
   background: none;
   border: none;
   width: 0px;
   height: 3vh;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
-.lrbtn:hover{
+
+.lrbtn:hover,
+.logout:hover {
   color: #a91871;
 }
-.loginMain{
+
+.loginMain {
   position: absolute;
   right: 0;
   margin-right: 15%;
 }
-.registerMain{
-  position:absolute;
-  right: 0;
-  margin-right: 9%;
-}
-.registerContainer{
+
+
+.registerContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bolder;
 }
-.loginContainer{
+
+.loginContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bolder;
 }
-.close{
+
+.close {
   align-self: flex-end;
   padding-right: 20px;
-  padding-top: 4px;
-  font-weight: 900;
-  font-size: larger;
-  width: 15px;
-  border-radius: 35%;
-  margin: 2px;
-  box-shadow: 4px 3px 6px -3px #020504;
-  color: white;
+
   background-color: #5CB8B2;
+  color: white;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  width: 25px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
+
 .close:hover {
   background-color: #418681;
   box-shadow: none;
 }
-.label{
+
+.label {
   font-size: 12px;
   margin: 10px;
 }
-.opening{
+
+.opening {
   margin-top: -40px;
-  font-size:35px;
+  font-size: 35px;
   font-family: 'Montserrat', sans-serif;
 }
-.inputs{
+
+.inputs {
   font-family: 'Montserrat', sans-serif;
   display: flex;
   margin-left: 5px;
   align-items: center;
   text-align: center;
   margin-left: 10vw;
-} 
-.left{
- display:flex;
- flex-direction: column;
- margin-right: 30px;
- margin-left: -30px
 }
-.right{
+
+.left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  margin-left: -30px
+}
+
+.right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content:flex-start;
+  justify-content: flex-start;
   margin-left: 30px;
-  
+
 }
-.input{
-  display:flex;
-  margin-left:10px;
+
+.input {
+  display: flex;
+  margin-left: 10px;
   margin-right: 10px;
   font-family: 'Montserrat', sans-serif;
   height: 20px;
 }
-.loginInput{
-  display:flex;
+
+.loginInput {
+  display: flex;
   margin-left: -15px;
   font-family: 'Montserrat', sans-serif;
 }
-.loginLabel{
+
+.loginLabel {
   font-size: 12px;
   margin-left: -20px
 }
-.tsandcs{
-    text-decoration: none;
-    color: #020504;
-    display: flex;
-    flex-direction: row;
+
+.tsandcs {
+  text-decoration: none;
+  color: #020504;
+  display: flex;
+  flex-direction: row;
 }
-.text{
+
+.text {
   margin-left: 5px;
 }
-.tandc{
-    text-decoration: none;
-    color: #FF66C4;
+
+.tandc {
+  text-decoration: none;
+  color: #FF66C4;
 }
-.tandc:hover{
-  text-decoration:underline;
+
+.tandc:hover {
+  text-decoration: underline;
   color: #020504;
 }
-.btn{
+
+.btn {
   display: flex;
   height: 45px;
   min-width: 100px;
@@ -195,11 +239,13 @@
   border-style: none;
   box-shadow: 4px 3px 6px -3px #020504
 }
-.btn:hover{
+
+.btn:hover {
   background-color: #418681;
-  box-shadow:none;
+  box-shadow: none;
 }
-.registerBtn{
+
+.registerBtn {
   display: flex;
   height: 45px;
   min-width: 100px;
@@ -207,7 +253,7 @@
   justify-content: center;
   align-self: end;
   margin-bottom: 60px;
-  margin-left:18vw;
+  margin-left: 18vw;
   background-color: #5CB8B2;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
@@ -217,12 +263,14 @@
   border-style: none;
   box-shadow: 4px 3px 6px -3px #020504
 }
-.registerBtn:hover{
+
+.registerBtn:hover {
   background-color: #D5F7F5;
-  box-shadow:none;
+  box-shadow: none;
   color: #FF66C4;
 }
-.loginBtn{
+
+.loginBtn {
   display: flex;
   height: 45px;
   min-width: 100px;
@@ -230,7 +278,7 @@
   justify-content: center;
   align-self: end;
   margin-bottom: 60px;
-  margin-left:12vw;
+  margin-left: 12vw;
   background-color: #5CB8B2;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
@@ -240,57 +288,56 @@
   border-style: none;
   box-shadow: 4px 3px 6px -3px #020504
 }
-.loginBtn:hover{
+
+.loginBtn:hover {
   background-color: #D5F7F5;
-  box-shadow:none;
+  box-shadow: none;
   color: #FF66C4;
 }
-.ReactModal__Overlay{
-    position:absolute;
-  }
 
+.ReactModal__Overlay {
+  position: absolute;
+}
 
-  /*******LOGOUT CSS*********/
-  .accAndLogoutDiv{
-    display: flex;
-  }
-  .logout{
-    color: #FF66C4;
-    display:flex;
-    position: absolute;
-    right: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: bolder;
-    justify-content: space-between;
-    align-self: center;
-    margin: 2px;
-    margin-top: -27px;
-    background: none;
-    border: none;
-    width: 50px;
-    height: 3vh;
-    white-space: nowrap;
-  }
-  .logout:hover{
-    color: #a91871;
-  }
+/*******LOGOUT CSS*********/
+.accAndLogoutDiv {
+  display: flex;
+}
+
+.logout {
+  color: #FF66C4;
+  display: flex;
+  position: absolute;
+  right: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  justify-content: space-between;
+  align-self: center;
+  margin: 2px;
+  margin-top: -27px;
+  background: none;
+  border: none;
+  width: 50px;
+  height: 3vh;
+  white-space: nowrap;
+}
+
+.logout:hover {
+  color: #a91871;
+}
 
 
 @media screen and (max-width:1300px) {
-  .loginMain{
+  .loginMain {
     margin-right: 200px;
   }
-  .registerMain{
+
+  .registerMain {
     margin-right: 120px
   }
-  .search{
+
+  .search {
     margin-right: 40px;
   }
 }
-
-
-
-
-
-

@@ -1,36 +1,58 @@
-import './styles.css';
-import CookieModal from '../components/homeModal';
-import Slideone from '../components/images/slideshow-1.png';
-import Slidetwo from '../components/images/slideshow-2.png';
-import Slidethree from '../components/images/slideshow-3.png';
-import { useState, useEffect } from "react";
+import './home.css';
+import HOCModal from '../components/HOCModal';
+import Slider from '../components/slider/slider';
+import approved from "../components/images/approved.png"
 
-const Home = (props) =>{
+
+const Home = (props) => {
     // useEffect(() => {
     //     const [allCookies, setAllCookies] = useState([]);
     //     setAllCookies(props.cookies)
     // }, []);
-    
+
     return (
-      
+
         <div className="homePage">
-            <div className='mainHomeImg'> 
-            <img className='slideone' src={Slideone} alt='slide one' />
-            <h2 className='cookietag'>COOKIE OF THE WEEK </h2>
-            <p className='cookiebio'>After much thought we have decided to champion this deluxe Oreo cookie to be our cookie of the week. Thank you to everyone who voted, be sure to checkout our other recipes below.  </p>
-            
-            
-            
+
+            <div className='homeHeader'>
+
+                <div className='sliderHeader'>
+                    <Slider />
+                </div>
+
+                <div className='textHeader'>
+                    <img className='approvedLogo' src={approved} alt=""></img>
+                    <p className='textHeader1'> The Best Cookie Recipes To Bake Year-Round!</p>
+                    <br /><br />
+                    <p className='textHeader2'> There's a cookie here for everyone.</p>
+
+                    <button className='btnHeader'>Recipes 🡲</button>
+
+                </div>
+
+
             </div>
-            <h1 className="title">OUR FAVOURITES</h1>
-    <div className="carouselMain">
-    {props.cookies?.slice(0, 5).map((cookie, index) => {
-     return <div key={index}>
-        <CookieModal cookie={cookie} index={index} />
+
+            <div className='ourFavourites'>
+                <h1 className='ourFavHeader'>Our Favourites</h1>
+                <div className='ourFavSlice'>
+                    {props.allCookies?.slice(0, 3).map((data, index) => {
+                        return (
+                            <HOCModal data={data} index={index} key={index} />
+                        )
+                    })}
+                </div>
+            </div>
+
+
+            {/* <div className="carouselMain">
+                {props.cookies?.slice(0, 3).map((cookie, index) => {
+                    return <div key={index}>
+                        <CookieModal cookie={cookie} index={index} />
+                    </div>
+                })}
+            </div>  */}
         </div>
-    })}      
-    </div>
-    </div>
     )
 }
 

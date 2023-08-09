@@ -2,6 +2,8 @@ import './style.css';
 import LoginOrAcc from './loginOrAcc';
 import Logout from './logout';
 import { Outlet, NavLink } from 'react-router-dom';
+import logo from "./images/cookie-logo.png"
+
 // import Search from './search'
 import { useState } from 'react';
 
@@ -10,8 +12,10 @@ const NavBar = (props) => {
     return(
         <>
         <div className="navbarMain">
-            <nav>
-                <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/">THE COOKIE CLUB</NavLink>
+            <nav className='navbarMainChild'>
+                <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/"><img className='logo' src={logo} alt=""></img></NavLink>
+                </nav>
+                <nav className='navbarMainChild1'>  
                 <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/recipes">RECIPES</NavLink>
             </nav>
                 {props.loginCookie

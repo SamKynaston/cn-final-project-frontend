@@ -1,15 +1,17 @@
+/*******RECIPE PAGE*********/
+
 .label {
     display: flex;
     justify-content: space-evenly;
     width: 200px;
-    height: 70px;
+    height: 80px;
     margin: 0 auto;
     background-color: white;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     padding-left: 8px;
     padding-right: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .cookieIMG {
@@ -166,7 +168,7 @@
     padding-top: 3px;
     padding-left: 0px;
     margin-left: 0px;
-    margin-bottom: 100vmin;
+    margin-bottom: 3vh;
 }
 
 
