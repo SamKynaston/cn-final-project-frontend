@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { handleEdit, fetchUsers } from '../utils'
 // added above once delete is added - handleDelete,
-import "../components/style.css"
+import "./account.css"
 import Modal from 'react-modal';
 
 const Account = (props) => {

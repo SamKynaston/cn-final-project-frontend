@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+.accountPage {
+    display: flex;
+}
+
+
+
+.accountTitle {
+    color:#020504;
+    font-size: 24px;
+    display: flex;
+    padding-left: 10px;
+  
+}
+
+.details {
+    color: red;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-end;
+    border: red;
+    padding-top: 80px;
+    margin-left: -200px;
+
+}
+
+.name {
+
+}
+
+.firstName {
+
+}
+
+.lastName {
+
+}
+
+.usernameEmail {
+
+}
+
+.username {
+
+}
+
+.email {
+
+}
+
+.label {
+
+}
+
+.modalButtons {
+    color: red;
+    display: flex;
+
+}
+
+.usernameBtn {
+
+}
+
+.usernameEdit {
+
+}
+
+.usernameEditTitle {
+
+}
+
+.submitBtn {
+
+}
+
+.emailBtn {
+
+}
+
+.emailEdit {
+
+}
+
+.emailEditTitle {
+
+}
+
+.email {
+
+}
+
+.newEmail {
+
+}
+
+.passwordEdit {
+
+}
+
+.passwordEditTitle {
+
+}
+
+.newPassword {
+
+}
+
+.repeatPassword {
+
+}
