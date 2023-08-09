@@ -44,8 +44,8 @@ const Home = (props) => {
                 </div>
             </div>
 
-
-            {/* <div className="carouselMain">
+{/* 
+            <div className="carouselMain">
                 {props.cookies?.slice(0, 3).map((cookie, index) => {
                     return <div key={index}>
                         <CookieModal cookie={cookie} index={index} />

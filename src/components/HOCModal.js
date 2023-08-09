@@ -60,7 +60,7 @@ const HOCModal = (props) => {
 
 
             </Modal>
-            <div className='label'>
+            <div className='labelDiv'>
                 <p className='recipeTxt'>{props.data.recipe.label}</p>
                 <button className='modalBtn' onClick={openModal}>🡲</button>
             </div>
