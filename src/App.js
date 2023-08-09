@@ -13,8 +13,9 @@ import Footer from './components/footer'
 function App() {
   const [allCookies, setAllCookies] = useState([]);
   const [allRandomCookies, setAllRandomCookies] = useState([]);
-  const [newUser, setNewUser] = useState("");
+  const [newUser, setNewUser] = useState({});
   const [loginCookie, setLoginCookie] = useState(false);
+  const [token, setToken] = useState('');
 
 
   useEffect(() => {
@@ -66,10 +67,10 @@ useEffect(() => {
 
   return (
     <div className="App">
-        <NavBar newUser={newUser} setNewUser={setNewUser} loginCookie={loginCookie} setLoginCookie={setLoginCookie} />
+        <NavBar newUser={newUser} setNewUser={setNewUser} loginCookie={loginCookie} setLoginCookie={setLoginCookie} token={token} setToken={setToken} />
         <Routes> 
           <Route index element={ <Home cookies={allRandomCookies} allCookies={allCookies}/>} />
-          <Route path="account" element={ <Account newUser={newUser} setNewUser={setNewUser} />} />
+          <Route path="account" element={ <Account newUser={newUser} setNewUser={setNewUser} token={token}/>} />
           <Route path="recipes" element={ <Recipes allCookies={allCookies} />} />
         </Routes>
         <Footer />

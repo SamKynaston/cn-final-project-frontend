@@ -6,7 +6,7 @@ import './style.css';
 
             return(
             <div className="loginorreg">
-                <Login newUser={props.newUser} setNewUser={props.setNewUser} loginCookie={props.loginCookie} setLoginCookie={props.setLoginCookie} /> 
+                <Login newUser={props.newUser} setNewUser={props.setNewUser} loginCookie={props.loginCookie} setLoginCookie={props.setLoginCookie} token={props.token} setToken={props.setToken} /> 
                 <Register />
             </div>)
             }
