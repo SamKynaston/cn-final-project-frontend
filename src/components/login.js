@@ -10,7 +10,13 @@ const Login = (props) => {
     
     const submitHandler = async (e) => {
         e.preventDefault()
-        await loginUser(username, password, props.newUser, props.setNewUser, props.loginCookie, props.setLoginCookie)
+        const info = await loginUser(username, password, props.loginCookie, props.setLoginCookie)
+        console.log("this is info from login ",info)
+        props.setNewUser(info[0].user)
+        props.setToken(info[1].token)
+        console.log("user from login is ", props.newUser)
+        console.log("token from login is ", props.token)
+        return (props.newUser, props.token)
         setTimeout(() => closeModal(), 4000)                                                                   
     }
     function openModal() {

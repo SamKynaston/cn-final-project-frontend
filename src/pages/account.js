@@ -1,28 +1,23 @@
 import { useState, useEffect } from 'react';
-import { handleEdit, fetchUsers } from '../utils'
+import { handleEdit, fetchUser } from '../utils';
 // added above once delete is added - handleDelete,
 import "./account.css"
 import Modal from 'react-modal';
+import UsernameModal from '../components/usernameModal';
 
 const Account = (props) => {
-    const [user, setUser] = useState([]);
     const [passwordModal, setPasswordModal] = useState(false);
     const [emailModal, setEmailModal] = useState(false);
-    const [usernameModal, setUsernameModal] = useState(false);
 //     const [deleteModal, setDeleteModal] = useState(false);
     const [updateKey, setUpdateKey] = useState('');
     const [updateValue, setUpdateValue] = useState('');
     const [checkValue, setCheckValue] = useState('');
 
-const usernameHandler = async () => {
-        setUpdateKey("username")
-        await handleEdit(updateKey, updateValue, user.id, setUser)
-        setUsernameModal(false)
-}
+
 
 const emailHandler = async () => {
         setUpdateKey("email")
-        await handleEdit(updateKey, updateValue, user.id, setUser)
+        await handleEdit(updateKey, updateValue, props.newUser.id, props.setNewUser)
         setEmailModal(false)
 }
 
@@ -37,7 +32,7 @@ const passwordHandler = () => {
 
 async function submitPassword(){
         setUpdateKey("password")
-        await handleEdit(updateKey, updateValue, user.id, setUser)
+        await handleEdit(updateKey, updateValue, props.newUser.id, props.setNewUser)
         setPasswordModal(false)
 }
 function noMatch(){
@@ -45,7 +40,8 @@ function noMatch(){
 }
 
     useEffect(() => {
-        fetchUsers(props.newUser.username, setUser);
+        const user = fetchUser(props.token);
+        props.setNewUser(user)
     }, []);
 
         return (
@@ -53,41 +49,21 @@ function noMatch(){
                 <h1 className="accountTitle">Account Details</h1>
                 <div className="details">
                                 <div className="name">
-                                        <label className="label" for="firstName">FIRST NAME:</label>
-                                                <p id="firstName" class="firstName" readonly>{user.forename}</p>
-                                        <label className="label" for="lastName">SURNAME:{user.surname}</label>
-                                                <p id="lastName" class="lastName" readonly>{user.surname}</p>
+                                        <label className="label" htmlFor="firstName">FIRST NAME:</label>
+                                                <p id="firstName" className="firstName">{props.newUser.forename}</p>
+                                        <label className="label" htmlFor="lastName">SURNAME:</label>
+                                                <p id="lastName" className="lastName">{props.newUser.surname}</p>
                                 </div>
                                 <br></br>
                                 <div className="usernameEmail">
-                                        <label className="label" for="username">USERNAME:</label>
-                                                <p id="username" class="username" readonly>{user.username}</p>
-                                        <label className="label" for="email">EMAIL:</label>
-                                                <p id="email" class="email" readonly>{user.email}</p>
+                                        <label className="label" htmlFor="username">USERNAME:</label>
+                                                <p id="username" className="username" >{props.newUser.username}</p>
+                                        <label className="label" htmlFor="email">EMAIL:</label>
+                                                <p id="email" className="email" >{props.newUser.email}</p>
                                 </div>
                                 <br></br>
                                 <div className="modalButtons">
-                                <button className='usernameBtn' onSubmit={() => setUsernameModal(true)}> Change Username </button>
-                                <Modal
-                                isOpen={usernameModal}
-                                onRequestClose={() => setUsernameModal(false)}
-                                ariaHideApp={false}
-                                contentLabel='username'
-                                >
-                                        <div className="usernameEdit">
-                                                <h1 classname="usernameEditTitle">CHANGE USERNAME</h1>
-                                                <button className="close" onClick={() => setUsernameModal(false)}>X</button>
-                                                <label className="label" for="username">CURRENT USERNAME:</label>
-                                                        <p id="username" class="username" readonly>{user.username}</p>
-                                                <form onSubmit = {() => usernameHandler()}>
-                                                        <div className="inputs">
-                                                                <label className="label" for="newUsername">NEW USERNAME:</label>
-                                                                        <input className="newUsername" id="newUsername" onChange= {(e) => setUpdateValue(e.target.value)} required></input>
-                                                        </div>
-                                                        <button type="submit" className="submitBtn">Submit</button>
-                                                </form>
-                                        </div>
-                                </Modal>
+                                <UsernameModal newUser={props.newUser} setNewUser={props.setNewUser} />
                                 <button className='emailBtn' onSubmit={() => setEmailModal(true)}> Change Email </button>
                                 <Modal
                                 isOpen={emailModal}
@@ -98,11 +74,11 @@ function noMatch(){
                                         <div className="emailEdit">
                                                 <h1 classname="emailEditTitle">CHANGE EMAIL</h1>
                                                 <button className="close" onClick={() => setEmailModal(false)}>X</button>
-                                                <label className="label" for="email">CURRENT EMAIL:</label>
-                                                        <p id="email" class="email" readonly>{user.email}</p>
+                                                <label className="label" htmlFor="email">CURRENT EMAIL:</label>
+                                                        <p id="email" className="email" >{props.newUser.email}</p>
                                                 <form onSubmit = {() => emailHandler()}>
                                                         <div className="inputs">
-                                                                <label className="label" for="newEmail">NEW EMAIL:</label>
+                                                                <label className="label" htmlFor="newEmail">NEW EMAIL:</label>
                                                                         <input className="newEmail" id="newEmail" onChange= {(e) => setUpdateValue(e.target.value)} required></input>
                                                         </div>
                                                         <button type="submit" className="submitBtn">Submit</button>
@@ -121,9 +97,9 @@ function noMatch(){
                                                 <button className="close" onClick={() => setPasswordModal(false)}>X</button>
                                                 <form onSubmit = {() => passwordHandler()}>
                                                         <div className="inputs">
-                                                                <label className="label" for="newPassword">NEW PASSWORD:</label>
+                                                                <label className="label" htmlFor="newPassword">NEW PASSWORD:</label>
                                                                         <input className="newPassword" id="newPassword" onChange= {(e) => setUpdateValue(e.target.value)} required></input>
-                                                                <label className="label" for="repeatPassword">TYPE PASSWORD AGAIN:</label>
+                                                                <label className="label" htmlFor="repeatPassword">TYPE PASSWORD AGAIN:</label>
                                                                         <input className="newPassword" id="repeatPassword" onChange= {(e) => setCheckValue(e.target.value)} required></input>
                                                         </div>
                                                         <button type="submit" className="submitBtn">Submit</button>
