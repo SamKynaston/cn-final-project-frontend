@@ -1,9 +1,7 @@
 import React from "react";
 import Modal from 'react-modal';
 import { registerUser } from "../utils";
-import { useState, useEffect } from "react";
-import DialogTitle from "@mui/material/DialogTitle";
-import Dialog from "@mui/material/Dialog";
+import { useState } from "react";
 import './style.css';
 
 const Register = () => {
@@ -35,7 +33,7 @@ const Register = () => {
             await registerUser(firstName, lastName, username, email, password)
         setTimeout(() => closeModal(), 4000)
         } else{
-   
+            openModal2()
         }
     }
 

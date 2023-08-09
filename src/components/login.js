@@ -3,7 +3,6 @@ import Modal from 'react-modal';
 import { loginUser } from "../utils";
 import { useState } from "react";
 
-//successful login needs to bring up dynamic user info
 const Login = (props) => {
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
@@ -14,14 +13,12 @@ const Login = (props) => {
         await loginUser(username, password, props.newUser, props.setNewUser, props.loginCookie, props.setLoginCookie)
         setTimeout(() => closeModal(), 4000)                                                                   
     }
-
     function openModal() {
         setModalIsOpen(true);
     }
     function closeModal() {
         setModalIsOpen(false);
     }
-
     return(
         <div className="loginMain">
             <button className="lrbtn" onClick={openModal}>LOGIN</button>
