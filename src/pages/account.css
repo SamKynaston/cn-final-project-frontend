@@ -32,9 +32,14 @@
 
 .firstName {
 
+    margin-left: 29px;
+    padding-left: 100px;
+    color: aqua;
+
 }
 
 .lastName {
+    color: green;
 
 }
 
@@ -57,10 +62,14 @@
 .modalButtons {
     color: red;
     display: flex;
-
+    padding-top: -50px;
+    margin-bottom: 30px;
+    
 }
 
 .usernameBtn {
+    margin-right: 20px;
+    margin-left: 20px;
 
 }
 
@@ -85,6 +94,9 @@
 }
 
 .emailEditTitle {
+
+    margin-right: 20px;
+    margin-left: 20px;
 
 }
 
@@ -111,3 +123,11 @@
 .repeatPassword {
 
 }
+
+.passwordBtn {
+
+    margin-right: 20px;
+    margin-left: 20px;
+
+}
+    
