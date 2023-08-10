@@ -64,6 +64,7 @@
 
 .modalContainer {
     background-color: #F6F6F6;
+    height: 100%;
     padding-left: 20px;
     padding-top: 20px;
     margin-top: 0px;
@@ -125,7 +126,7 @@
     font-weight: bolder;
     text-transform: uppercase;
     text-align: left;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.5px;
     color: #FF66C4;
 }
@@ -136,15 +137,16 @@
     font-weight: bolder;
     text-transform: uppercase;
     text-align: left;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.5px;
     color: #FF66C4;
-    padding-top: 30px;
+    padding-top: 12%;
 
 }
 
 .IngredientTXT {
     font-size: 12px;
+    font-weight: bolder;
     letter-spacing: 0.5px;
     font-family: 'Montserrat', sans-serif;
     line-height: 2px;
