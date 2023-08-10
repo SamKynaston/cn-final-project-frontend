@@ -47,8 +47,8 @@ const Register = () => {
           contentLabel='Register'
         >
           <div className="registerContainer">
-          <button className="close" onClick={closeModal}>X</button>
-          <h1 className="opening">What are you waiting for? Become a Cookie Connoisseur today!</h1>
+          <button className="closeBtn" onClick={closeModal}>X</button>
+          <h1 className="registerHeader">What are you waiting for? <br  /> Become a Cookie Connoisseur today!</h1>
             <form onSubmit = {submitHandler}>
             <div className="inputs">
             <div className="left">
