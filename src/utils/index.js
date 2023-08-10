@@ -26,7 +26,7 @@ export const registerUser = async (firstName, lastName, username, email, passwor
     }
 }
 
-export const loginUser = async (username, password, loginCookie, setLoginCookie) => {
+export const loginUser = async (username, password, newUser, setNewUser, loginCookie, setLoginCookie) => {
     try {
         const response = await fetch('http://localhost:5001/users/login', {
             method: "POST",
@@ -39,10 +39,18 @@ export const loginUser = async (username, password, loginCookie, setLoginCookie)
         })
         const data = await response.json()
         console.log(data)
-        const info = [{"user": data.user}, {"token": data.token}]
-        console.log(info)
-        writeCookie("jwt_token", data.token, 7, loginCookie, setLoginCookie)
-        return info
+        // setNewUser({
+        //     id: data.user.id,
+        //     username: data.user.username,
+        //     email: data.user.email,
+        //     firstName: data.user.forename,
+        //     lastName: data.user.surname,
+        //     token: data.token
+        // }
+        // )
+        // console.log("userInfo from index is ", newUser)
+        const cookie = writeCookie("jwt_token", data.token, 7)
+        return ({data, cookie}) 
     } catch (error) {
         console.log(error)
     }

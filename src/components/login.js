@@ -10,14 +10,19 @@ const Login = (props) => {
     
     const submitHandler = async (e) => {
         e.preventDefault()
-        const info = await loginUser(username, password, props.loginCookie, props.setLoginCookie)
-        console.log("this is info from login ",info)
-        props.setNewUser(info[0].user)
-        props.setToken(info[1].token)
-        console.log("user from login is ", props.newUser)
-        console.log("token from login is ", props.token)
-        return (props.newUser, props.token)
-        setTimeout(() => closeModal(), 4000)                                                                   
+        const data = await loginUser(username, password, props.newUser, props.setNewUser, props.loginCookie, props.setLoginCookie)
+        props.setNewUser({
+            id: data.data.user.id,
+            username: data.data.user.username,
+            email: data.data.user.email,
+            firstName: data.data.user.forename,
+            lastName: data.data.user.surname,
+            token: data.data.token,
+            cookie: data.cookie
+        })
+        props.setLoginCookie(data.cookie)
+        console.log("this is info from login ", props.newUser)
+        setTimeout(() => closeModal(), 4000)
     }
     function openModal() {
         setModalIsOpen(true);
