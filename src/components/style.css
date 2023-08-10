@@ -66,12 +66,45 @@
   width: 100px
 }
 
-/*******LOGIN/REGISTER CSS*********/
+/*******LOGIN/ REGISTER/ LOGOUT NAVBAR TEXT*********/
+
+.accAndLogoutDiv {
+  display: flex;
+
+}
+
+.logout {
+  color: #FF66C4;
+  display: flex;
+  position: absolute;
+  right: 5%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin: 2px;
+  background: none;
+  border: none;
+  width: 50px;
+  height: 3vh;
+  white-space: nowrap;
+}
+
+.logout:hover {
+  color: #a91871;
+}
 
 .registerMain {
   position: absolute;
   right: 0;
   margin-right: 9%;
+}
+
+.loginMain {
+  position: absolute;
+  right: 0;
+  margin-right: 15%;
 }
 
 .lrbtn {
@@ -96,35 +129,24 @@
   color: #a91871;
 }
 
-.loginMain {
-  position: absolute;
-  right: 0;
-  margin-right: 15%;
-}
-
+/*******SIGN UP / LOG IN MODAL*********/
 
 .registerContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
   font-weight: bolder;
+  background-color: #F6F6F6;
+  height: 100%;
+  padding-left: 20px;
+  padding-top: 8px;
+  margin-top: 0px;
+  padding-bottom: 0px;
 }
 
-.loginContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: bolder;
-}
-
-.close {
-  align-self: flex-end;
-  padding-right: 20px;
-
+.closeBtn {
   background-color: #5CB8B2;
   color: white;
   font-size: 12px;
@@ -133,36 +155,51 @@
   width: 25px;
   height: 20px;
   box-sizing: border-box;
-  border: 0;
   border-radius: 100px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 50vh;
+  margin-top: 10px;
 }
 
-.close:hover {
+.closeBtn:hover {
   background-color: #418681;
   box-shadow: none;
 }
 
-.label {
-  font-size: 12px;
-  margin: 10px;
-}
-
-.opening {
-  margin-top: -40px;
-  font-size: 35px;
+.registerHeader,.PlzLogin {
   font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 23px;
+  color: #FF66C4;
 }
 
 .inputs {
   font-family: 'Montserrat', sans-serif;
   display: flex;
   margin-left: 5px;
-  align-items: center;
-  text-align: center;
-  margin-left: 10vw;
+
 }
+
+.input, .loginInput {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  width: 200px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 90px;
+  cursor: pointer;
+  padding-left: 8px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+
 
 .left {
   display: flex;
@@ -174,29 +211,40 @@
 .right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  margin-left: 30px;
-
-}
-
-.input {
-  display: flex;
-  margin-left: 10px;
   margin-right: 10px;
-  font-family: 'Montserrat', sans-serif;
-  height: 20px;
+  margin-left: -40px
+
 }
 
-.loginInput {
-  display: flex;
-  margin-left: -15px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.loginLabel {
+.label,.loginLabel {
   font-size: 12px;
-  margin-left: -20px
+  margin: 15px;
+  border-left: 5px;
+  padding-left: 5%;
+}
+
+.registerBtn,.loginBtn {
+  background-color: #5CB8B2;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-bottom: 3vh;
+}
+
+.registerBtn,.loginBtn:hover {
+  background-color: #418681;
+  box-shadow: none;
 }
 
 .tsandcs {
@@ -220,112 +268,46 @@
   color: #020504;
 }
 
-.btn {
+
+/*******LOG IN MODAL*********/
+
+.loginContainer {
   display: flex;
-  height: 45px;
-  min-width: 100px;
-  align-items: center;
-  justify-content: center;
-  align-self: end;
-  margin-bottom: 60px;
-  margin-right: 80px;
-  margin-left: -200px;
-  background-color: #5CB8B2;
+  flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
   font-weight: bolder;
-  color: white;
-  border-radius: 42%;
-  border-style: none;
-  box-shadow: 4px 3px 6px -3px #020504
+  background-color: #F6F6F6;
+  height: 100%;
+  padding-left: 20px;
+  padding-top: 8px;
+  margin-top: 0px;
+  padding-bottom: 0px;
 }
 
-.btn:hover {
-  background-color: #418681;
-  box-shadow: none;
-}
-
-.registerBtn {
+.inputsleft {
   display: flex;
-  height: 45px;
-  min-width: 100px;
-  align-items: center;
-  justify-content: center;
-  align-self: end;
-  margin-bottom: 60px;
-  margin-left: 18vw;
-  background-color: #5CB8B2;
+  flex-direction: column;
+  height: 70%;
+  margin-right: 30px;
+  margin-left: -70px
+}
+
+/* 
+
+.opening {
+  margin-top: -40px;
+  font-size: 35px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: bolder;
-  color: white;
-  border-radius: 42%;
-  border-style: none;
-  box-shadow: 4px 3px 6px -3px #020504
-}
+} */
 
-.registerBtn:hover {
-  background-color: #D5F7F5;
-  box-shadow: none;
-  color: #FF66C4;
-}
 
-.loginBtn {
-  display: flex;
-  height: 45px;
-  min-width: 100px;
-  align-items: center;
-  justify-content: center;
-  align-self: end;
-  margin-bottom: 60px;
-  margin-left: 12vw;
-  background-color: #5CB8B2;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: bolder;
-  color: white;
-  border-radius: 42%;
-  border-style: none;
-  box-shadow: 4px 3px 6px -3px #020504
-}
-
-.loginBtn:hover {
-  background-color: #D5F7F5;
-  box-shadow: none;
-  color: #FF66C4;
-}
 
 .ReactModal__Overlay {
   position: absolute;
 }
 
-/*******LOGOUT CSS*********/
-.accAndLogoutDiv {
-  display: flex;
-}
-
-.logout {
-  color: #FF66C4;
-  display: flex;
-  position: absolute;
-  right: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: bolder;
-  justify-content: space-between;
-  align-self: center;
-  margin: 2px;
-  margin-top: -27px;
-  background: none;
-  border: none;
-  width: 50px;
-  height: 3vh;
-  white-space: nowrap;
-}
-
-.logout:hover {
-  color: #a91871;
-}
 
 
 @media screen and (max-width:1300px) {

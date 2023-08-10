@@ -2,14 +2,12 @@
     display: flex;
     margin-top: -10px;
     position: relative;
-    height: 300px;
-    width: 100vw;
-    min-width: 900px;
+    height: 400px;
+    width: 100%;
     background-image: url('./images/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     /* width: 100vmax; */
-    height: 400px;
 }
 
 .socials {
@@ -43,7 +41,7 @@ h1 {
 }
 
 .socialLogo:hover {
-    opacity: 50%;
+    opacity: 50%
 }
 
 .contact {
