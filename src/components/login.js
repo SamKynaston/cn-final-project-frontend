@@ -40,10 +40,10 @@ const Login = (props) => {
           contentLabel='Login'
         >
           <div className="loginContainer">
-          <button className="close" onClick={closeModal}>X</button>
-            <h1>Please login:</h1>
+          <button className="closeBtn" onClick={closeModal}>X</button>
+            <h1 className='PlzLogin'>Please login:</h1>
             <form onSubmit={submitHandler}>
-                <div className="inputs left">
+                <div className="inputsleft">
                 <label className="loginLabel">USERNAME:
                     <input className="loginInput" onChange= {(e) => setUsername(e.target.value)}></input>
                 </label>

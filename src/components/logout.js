@@ -8,7 +8,7 @@ import './style.css';
                     <NavLink className={({isActive}) => isActive ? "current": "page" }  to="/account">ACCOUNT</NavLink>
                     </div>
                     <div className="logoutDiv">
-                    <button className="logOut" onClick={()=> props.setLoginCookie('')}>Logout</button>
+                    <button className="logout" onClick={()=> props.setLoginCookie('')}>Logout</button>
                     </div>
                 </div>)
         }
