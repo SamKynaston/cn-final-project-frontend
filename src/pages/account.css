@@ -47,8 +47,22 @@
     margin-left: -72.5%;
     
 }
+.newPassword, .repeatPassword, .newEmail, .newUsername{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    display: flex;
+    margin-top: 2px;
+    margin-left: 11.5%;
+    padding-left: 14px;
+    padding-top: 5px;
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    border-radius: 100px;
+}
 
-.fnLabelTxt, .surLabelTxt, .usernameLabelTxt, .emailLabelTxt { 
+.fnLabelTxt, .surLabelTxt, .usernameLabelTxt, .emailLabelTxt, .usernameModalTxt, .emailModalTxt { 
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     letter-spacing: 0.5px;
@@ -87,6 +101,59 @@
     margin-bottom: 3vh;
 }
 
+.keepAccount{
+    display: flex;
+    background-color: #5CB8B2;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    width: 150px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    padding-top: 4px;
+    justify-content: center;
+    margin-left: 13.5%;
+    margin-bottom: 3vh;
+    line-height: 12px;
+}
+
+.keepAccount:hover {
+    background-color: #418681;
+    box-shadow: none;
+  }
+
+.deleteAcc{
+    display: flex;
+    background-color: #FD3CB0;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    width: 150px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    padding-top: 6px;
+    justify-content: center;
+    margin-left: 13.5%;
+    margin-bottom: 3vh;
+    text-decoration: none;
+}
+
+.deleteAcc:hover {
+    background-color: #851d5c;
+    box-shadow: none;
+  }
 .emailBtn:hover {
     background-color: #418681;
     box-shadow: none;
@@ -146,11 +213,75 @@
     box-shadow: none;
   }
 
+.deleteBtn {
+    display: flex;
+    background-color: #5CB8B2;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    width: 170px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    padding-top: 7px;
+    justify-content: center;
 
+    margin-left: 13.5%;
+    margin-bottom: 3vh;
+}
 
- 
+.deleteBtn:hover {
+    background-color: #418681;
+    box-shadow: none;
+  }
 
+  .submitBtn {
+    display: flex;
+    background-color: #5CB8B2;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    width: 170px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    padding-top: 7px;
+    justify-content: center;
 
+    margin-left: 13.5%;
+    margin-bottom: 3vh;
+}
+
+.submitBtn:hover {
+    background-color: #418681;
+    box-shadow: none;
+  }
+  .closeBtn {
+    background-color: #5CB8B2;
+    color: white;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    width: 25px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
 
 
 
