@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
+/*******ACCOUNT DETAILS HOME*********/
 .accountPage {
+<<<<<<< HEAD
     display: flex;
     font-family: 'Montserrat', sans-serif;
+=======
+    background-color: #F6F6F6;
+    height: 100vh;
+    
+>>>>>>> db405a5bfe96414506a2cd0d8f9ff67bb1ed015a
 }
 
-
-
 .accountTitle {
+<<<<<<< HEAD
     color:#020504;
     font-size: 30px;
     display: flex;
@@ -16,12 +22,23 @@
     text-align: center;
     text-justify: center;
   
+=======
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 23px;
+    color: #FF66C4;
+    padding-top: 5%;
+    margin-left: -60%;
+>>>>>>> db405a5bfe96414506a2cd0d8f9ff67bb1ed015a
 }
 
-.details {
-    color: red;
+.name, .usernameEmail{
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     text-align: left;
     align-items: center;
     border: red;
@@ -79,21 +96,54 @@
     margin-bottom: 30px;
     font-family: 'Montserrat', sans-serif;
 
+=======
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+    padding-left: 20px;
+    padding-top: 8px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    
 }
 
-.usernameEdit {
-
+.firstnamebox,.surnamebox,.userbox,.emailbox {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 5px;
+    
+>>>>>>> db405a5bfe96414506a2cd0d8f9ff67bb1ed015a
 }
 
-.usernameEditTitle {
-
+.fnLabel,.surlabel,.userLabel{
+    margin-left: -70%;
 }
 
-.submitBtn {
-
+.emailLabel{
+    margin-left: -72.5%;
+    
 }
+
+.fnLabelTxt, .surLabelTxt, .usernameLabelTxt, .emailLabelTxt { 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    display: flex;
+    margin-top: 2px;
+    margin-left: 11.5%;
+    padding-left: 14px;
+    padding-top: 5px;
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    border-radius: 100px;
+}
+
+  
+/*******BUTTONS*********/
 
 .emailBtn {
+<<<<<<< HEAD
     margin-right: 20px;
     margin-left: 20px;
     color: red;
@@ -102,44 +152,35 @@
     margin-bottom: 30px;
     font-family: 'Montserrat', sans-serif;
 
+=======
+    display: flex;
+    background-color: #5CB8B2;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    width: 150px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    padding-top: 6px;
+    justify-content: center;
+    margin-left: 13.5%;
+    margin-bottom: 3vh;
+>>>>>>> db405a5bfe96414506a2cd0d8f9ff67bb1ed015a
 }
 
-.emailEdit {
-
-}
-
-.emailEditTitle {
-
-    margin-right: 20px;
-    margin-left: 20px;
-
-}
-
-.email {
-
-}
-
-.newEmail {
-
-}
-
-.passwordEdit {
-
-}
-
-.passwordEditTitle {
-
-}
-
-.newPassword {
-
-}
-
-.repeatPassword {
-
-}
+.emailBtn:hover {
+    background-color: #418681;
+    box-shadow: none;
+  }
 
 .passwordBtn {
+<<<<<<< HEAD
     margin-right: 20px;
     margin-left: 20px;
     color: red;
@@ -148,5 +189,66 @@
     margin-bottom: 30px;
     font-family: 'Montserrat', sans-serif;
 
+=======
+    display: flex;
+    background-color: #5CB8B2;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    width: 170px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    padding-top: 6px;
+    justify-content: center;
+    margin-left: 13.5%;
+    margin-bottom: 30px;
+    padding-bottom: 0;
+>>>>>>> db405a5bfe96414506a2cd0d8f9ff67bb1ed015a
 }
-    
+
+.passwordBtn:hover {
+    background-color: #418681;
+    box-shadow: none;
+  }
+
+.usernameBtn {
+    display: flex;
+    background-color: #5CB8B2;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    width: 170px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    padding-top: 7px;
+    justify-content: center;
+
+    margin-left: 13.5%;
+    margin-bottom: 3vh;
+}
+
+.usernameBtn:hover {
+    background-color: #418681;
+    box-shadow: none;
+  }
+
+
+
+ 
+
+
+
+
+

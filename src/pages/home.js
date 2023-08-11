@@ -25,9 +25,9 @@ const Home = (props) => {
                     <p className='textHeader1'> The Best Cookie Recipes To Bake Year-Round!</p>
                     <br /><br />
                     <p className='textHeader2'> There's a cookie here for everyone.</p>
-
-                    <button className='btnHeader'>Recipes 🡲</button>
-
+                    <a href=".recipes">
+                        <button className='btnHeader' onClick={"/recipes"}>Recipes</button>
+                    </a>
                 </div>
 
 
@@ -44,7 +44,7 @@ const Home = (props) => {
                 </div>
             </div>
 
-{/* 
+            {/* 
             <div className="carouselMain">
                 {props.cookies?.slice(0, 3).map((cookie, index) => {
                     return <div key={index}>
