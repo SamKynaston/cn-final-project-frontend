@@ -1,0 +1,138 @@
+import { useState, useEffect } from 'react';
+import { handleEdit } from '../utils';
+// added above once delete is added - handleDelete,
+import "./account.css"
+import Modal from 'react-modal';
+import UsernameModal from '../components/usernameModal';
+
+const Account = (props) => {
+    const [passwordModal, setPasswordModal] = useState(false);
+    const [emailModal, setEmailModal] = useState(false);
+//     const [deleteModal, setDeleteModal] = useState(false);
+    const [updateKey, setUpdateKey] = useState('');
+    const [updateValue, setUpdateValue] = useState('');
+    const [checkValue, setCheckValue] = useState('');
+    const [newUser, setNewUser] = useState({});
+
+useEffect(() => {
+        const fetchUser = async () => {
+                const token = props.token
+            try {
+                const response = await fetch('http://localhost:5001/user/find', {
+                        method: "GET",
+                        headers: {"Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "http://localhost:5001",
+                        "Authorization": "Bearer ", token}
+                })
+                const data = await response.json()
+                const user = {
+                      id: data.user.id,
+                      username: data.user.username,
+                      firstName: data.user.firstName,
+                      lastName: data.user.lastName,
+                      email: data.user.email,
+                }
+                setNewUser(user);
+            } catch (err) {
+                console.log(err)
+            }
+        }
+          fetchUser()
+      }, []);
+
+const emailHandler = async () => {
+        setUpdateKey("email")
+        await handleEdit(updateKey, updateValue, newUser.id, setNewUser())
+        setEmailModal(false)
+}
+
+const passwordHandler = () => {
+        (updateValue===checkValue)
+        ?
+        submitPassword()
+        :
+        noMatch()
+}
+
+async function submitPassword(){
+        setUpdateKey("password")
+        await handleEdit(updateKey, updateValue, newUser.id, setNewUser())
+        setPasswordModal(false)
+}
+function noMatch(){
+        setPasswordModal(false)
+}
+
+
+        return (
+        <div className="accountPage">
+                <h1 className="accountTitle">Account Details</h1>
+                <div className="details">
+                                <div className="name">
+                                        <label className="label" htmlFor="firstName">FIRST NAME:</label>
+                                                <p id="firstName" className="firstName">{newUser.firstName}</p>
+                                        <label className="label" htmlFor="lastName">SURNAME:</label>
+                                                <p id="lastName" className="lastName">{newUser.lastName}</p>
+                                </div>
+                                <br></br>
+                                <div className="usernameEmail">
+                                        <label className="label" htmlFor="username">USERNAME:</label>
+                                                <p id="username" className="username" >{newUser.username}</p>
+                                        <label className="label" htmlFor="email">EMAIL:</label>
+                                                <p id="email" className="email" >{newUser.email}</p>
+                                </div>
+                                <br></br>
+                                <div className="modalButtons">
+                                <UsernameModal newUser={newUser} setNewUser={() => setNewUser()} />
+                                <button className='emailBtn' onSubmit={() => setEmailModal(true)}> Change Email </button>
+                                <Modal
+                                isOpen={emailModal}
+                                onRequestClose={() => setEmailModal(false)}
+                                ariaHideApp={false}
+                                contentLabel='email'
+                                >
+                                        <div className="emailEdit">
+                                                <h1 classname="emailEditTitle">CHANGE EMAIL</h1>
+                                                <button className="close" onClick={() => setEmailModal(false)}>X</button>
+                                                <label className="label" htmlFor="email">CURRENT EMAIL:</label>
+                                                        <p id="email" className="email" >{newUser.email}</p>
+                                                <form onSubmit = {() => emailHandler()}>
+                                                        <div className="inputs">
+                                                                <label className="label" htmlFor="newEmail">NEW EMAIL:</label>
+                                                                        <input className="newEmail" id="newEmail" onChange= {(e) => setUpdateValue(e.target.value)} required></input>
+                                                        </div>
+                                                        <button type="submit" className="submitBtn">Submit</button>
+                                                </form>
+                                        </div>
+                                </Modal>
+                                <button className='passwordBtn' onSubmit={() => setPasswordModal(true)}> Change Password </button>
+                                <Modal
+                                isOpen={passwordModal}
+                                onRequestClose={() => setPasswordModal(false)}
+                                ariaHideApp={false}
+                                contentLabel='password'
+                                >
+                                        <div className="passwordEdit">
+                                                <h1 classname="passwordEditTitle">CHANGE PASSWORD</h1>
+                                                <button className="close" onClick={() => setPasswordModal(false)}>X</button>
+                                                <form onSubmit = {() => passwordHandler()}>
+                                                        <div className="inputs">
+                                                                <label className="label" htmlFor="newPassword">NEW PASSWORD:</label>
+                                                                        <input className="newPassword" id="newPassword" onChange= {(e) => setUpdateValue(e.target.value)} required></input>
+                                                                <label className="label" htmlFor="repeatPassword">TYPE PASSWORD AGAIN:</label>
+                                                                        <input className="newPassword" id="repeatPassword" onChange= {(e) => setCheckValue(e.target.value)} required></input>
+                                                        </div>
+                                                        <button type="submit" className="submitBtn">Submit</button>
+                                                </form>
+                                        </div>
+                                </Modal>
+                        </div>
+                </div>
+        </div>
+
+        )
+
+}
+
+
+export default Account;

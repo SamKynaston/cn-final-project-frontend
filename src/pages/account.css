@@ -2,15 +2,19 @@
 
 .accountPage {
     display: flex;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
 
 .accountTitle {
     color:#020504;
-    font-size: 24px;
+    font-size: 30px;
     display: flex;
-    padding-left: 10px;
+    padding-left: 100px;
+    margin-left: 100px;
+    text-align: center;
+    text-justify: center;
   
 }
 
@@ -19,21 +23,19 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    align-items: flex-end;
+    align-items: center;
     border: red;
     padding-top: 80px;
-    margin-left: -200px;
+    margin-left: -500px;
 
 }
 
 .name {
-
+    display:flex;
+    flex-direction: row;
 }
 
 .firstName {
-
-    margin-left: 29px;
-    padding-left: 100px;
     color: aqua;
 
 }
@@ -44,7 +46,8 @@
 }
 
 .usernameEmail {
-
+    display:flex;
+    flex-direction: row;
 }
 
 .username {
@@ -56,20 +59,25 @@
 }
 
 .label {
-
+    display: flex;
+    justify-self: center;
+    white-space: nowrap;
 }
 
 .modalButtons {
-    color: red;
     display: flex;
-    padding-top: -50px;
     margin-bottom: 30px;
     
 }
 
 .usernameBtn {
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 200px;
+    color: red;
+    display: flex;
+    padding-top: -50px;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -86,6 +94,13 @@
 }
 
 .emailBtn {
+    margin-right: 20px;
+    margin-left: 20px;
+    color: red;
+    display: flex;
+    padding-top: -50px;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -125,9 +140,13 @@
 }
 
 .passwordBtn {
-
     margin-right: 20px;
     margin-left: 20px;
+    color: red;
+    display: flex;
+    padding-top: -50px;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
 
 }
     

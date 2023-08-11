@@ -10,18 +10,11 @@ const Login = (props) => {
     
     const submitHandler = async (e) => {
         e.preventDefault()
-        const data = await loginUser(username, password, props.newUser, props.setNewUser, props.loginCookie, props.setLoginCookie)
-        props.setNewUser({
-            id: data.data.user.id,
-            username: data.data.user.username,
-            email: data.data.user.email,
-            firstName: data.data.user.forename,
-            lastName: data.data.user.surname,
-            token: data.data.token,
-            cookie: data.cookie
-        })
-        props.setLoginCookie(data.cookie)
-        console.log("this is info from login ", props.newUser)
+        const data = await loginUser(username, password, props.setNewUser, props.setLoginCookie, props.setToken)
+        // props.setLoginCookie(data.cookie)
+        // props.setNewUser(data.user)
+        // props.setToken(data.user.token)
+        // console.log("this is info from login ", data)
         setTimeout(() => closeModal(), 4000)
     }
     function openModal() {
@@ -40,10 +33,10 @@ const Login = (props) => {
           contentLabel='Login'
         >
           <div className="loginContainer">
-          <button className="closeBtn" onClick={closeModal}>X</button>
-            <h1 className='PlzLogin'>Please login:</h1>
+          <button className="close" onClick={closeModal}>X</button>
+            <h1>Please login:</h1>
             <form onSubmit={submitHandler}>
-                <div className="inputsleft">
+                <div className="inputs left">
                 <label className="loginLabel">USERNAME:
                     <input className="loginInput" onChange= {(e) => setUsername(e.target.value)}></input>
                 </label>

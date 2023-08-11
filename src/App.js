@@ -70,7 +70,7 @@ useEffect(() => {
         <NavBar newUser={newUser} setNewUser={setNewUser} loginCookie={loginCookie} setLoginCookie={setLoginCookie} token={token} setToken={setToken} />
         <Routes> 
           <Route index element={ <Home cookies={allRandomCookies} allCookies={allCookies}/>} />
-          <Route path="account" element={ <Account newUser={newUser} setNewUser={setNewUser} token={token}/>} />
+          <Route path="account" element={ <Account newUser={newUser} setNewUser={setNewUser} token={token} setToken={setToken} loginCookie={loginCookie} setLoginCookie={setLoginCookie} />} />
           <Route path="recipes" element={ <Recipes allCookies={allCookies} />} />
         </Routes>
         <Footer />
