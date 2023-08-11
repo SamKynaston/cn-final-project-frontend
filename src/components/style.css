@@ -89,6 +89,7 @@
   width: 50px;
   height: 3vh;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .logout:hover {

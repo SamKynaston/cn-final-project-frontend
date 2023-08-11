@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
 import { handleEdit } from '../utils';
 import { useState } from 'react';
+import '../pages/account.css';
 
 const UsernameModal = (props) => {
 
@@ -10,13 +11,13 @@ const UsernameModal = (props) => {
 
     const usernameHandler = async () => {
         setUpdateKey("username")
-        await handleEdit(updateKey, updateValue, props.newUser.id, props.setNewUser)
+        await handleEdit(updateKey, updateValue, props.token)
         setModalIsOpen(false)
 }
 
     return (
         <div>
-            <button className='usernameBtn' onSubmit={() => setModalIsOpen(true)}> Change Username </button>
+            <button className='usernameBtn' onClick={() => setModalIsOpen(true)}> Change Username </button>
             <Modal
             isOpen={modalIsOpen}
             onRequestClose={() => setModalIsOpen(false)}
@@ -24,10 +25,10 @@ const UsernameModal = (props) => {
             contentLabel='username'
             >
                 <div className="usernameEdit">
-                    <h1 classname="usernameEditTitle">CHANGE USERNAME</h1>
-                    <button className="close" onClick={() => setModalIsOpen(false)}>X</button>
+                    <h1 className="usernameEditTitle">CHANGE USERNAME</h1>
+                    <button className="closeBtn" onClick={() => setModalIsOpen(false)}>X</button>
                     <label className="label" htmlFor="username">CURRENT USERNAME:</label>
-                        <p id="username" className="username" >{props.newUser.username}</p>
+                        <p id="username" className="usernameModalTxt" >{props.newUser.username}</p>
                     <form onSubmit = {() => usernameHandler()}>
                         <div className="inputs">
                             <label className="label" htmlFor="newUsername">NEW USERNAME:</label>
